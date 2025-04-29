@@ -107,7 +107,9 @@ export default function HeroSection() {
 
       {/* Main content container */}
       {/* Increased horizontal padding px-6 -> px-8, md:px-10 -> md:px-12, lg:px-16 */}
+      {/* Grid layout ensures text is first on mobile, image is second */}
       <div className="container px-8 md:px-12 lg:px-16 grid gap-8 lg:grid-cols-2 lg:gap-16 items-center relative z-10">
+        {/* Text Content - Order 1 on all screens by default */}
         <div className="space-y-6 text-center lg:text-left"> {/* Increased space-y */}
            {/* Apply font, gradient, and animation */}
           <motion.h1
@@ -165,18 +167,35 @@ export default function HeroSection() {
               <div><span className="text-2xl font-bold text-primary mr-1">5+</span> Years Experience</div>
            </motion.div>
         </div>
+
+        {/* Image Container - Order 2 on mobile, Order last (right) on large screens */}
         <motion.div
-           className="relative flex justify-center"
+           className="relative flex justify-center lg:order-last" // Ensure image is last on large screens
            initial={{ opacity: 0, scale: 0.9 }}
-           animate={{ opacity: 1, scale: 1 }}
-           transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }} // Adjusted delay and duration
+           animate={{
+             opacity: 1,
+             scale: 1,
+             // Add floating animation
+             y: ["0%", "-3%", "0%"], // Moves up and down by 3%
+           }}
+           transition={{
+             opacity: { duration: 0.7, delay: 0.4, ease: "easeOut" },
+             scale: { duration: 0.7, delay: 0.4, ease: "easeOut" },
+             y: { // Configure the y (floating) animation
+               duration: 4, // Duration for one cycle (up and down)
+               repeat: Infinity, // Repeat forever
+               repeatType: "reverse", // Reverse direction after each cycle
+               ease: "easeInOut", // Smooth easing
+               delay: 0.6, // Start floating after initial fade/scale
+             }
+           }}
         > {/* Make image container relative for foreground elements */}
           <Image
-            src="https://picsum.photos/600/400?grayscale"
+            src="/herotech.png"
             width={600}
             height={400}
             alt="Hero Image - Responsive Design Showcase"
-            className="mx-auto aspect-[3/2] overflow-hidden rounded-xl object-cover sm:w-full lg:order-last transition-transform duration-500 ease-in-out hover:scale-105 shadow-xl border border-border/10" // Added shadow-xl and subtle border
+            className="mx-auto aspect-[3/2] overflow-hidden rounded-xl object-contain sm:w-full transition-transform duration-500 ease-in-out hover:scale-105 border border-border/10" // Added subtle border
             priority
           />
           {/* Floating FOREGROUND elements positioned relative to the image container */}
