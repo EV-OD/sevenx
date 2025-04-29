@@ -27,7 +27,8 @@ const services = [
 export default function ServicesSection() {
   return (
     <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-background">
-      <div className="container px-6 md:px-8 lg:px-10">
+       {/* Increased horizontal padding px-6 -> px-8, md:px-10 -> md:px-12, lg:px-16 */}
+      <div className="container px-8 md:px-12 lg:px-16">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">Our Services</h2>
           <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">

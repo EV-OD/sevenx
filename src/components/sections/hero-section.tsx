@@ -5,7 +5,8 @@ import Link from 'next/link';
 export default function HeroSection() {
   return (
     <section id="home" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
-      <div className="container px-6 md:px-8 lg:px-10 grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+      {/* Increased horizontal padding px-6 -> px-8, md:px-10 -> md:px-12, lg:px-16 */}
+      <div className="container px-8 md:px-12 lg:px-16 grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
         <div className="space-y-4 text-center lg:text-left">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-primary animate-fade-in-up">
             Crafting Responsive Web Experiences
@@ -13,7 +14,7 @@ export default function HeroSection() {
           <p className="max-w-[600px] text-muted-foreground md:text-xl mx-auto lg:mx-0 animate-fade-in-up animation-delay-200">
             We build modern, accessible, and high-performing websites that look great on any device. Let us bring your vision to life.
           </p>
-          <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center lg:justify-start animate-fade-in-up animation-delay-400">
+          <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center lg:justify-start animate-fade-in-up animation-delay-400 pt-4"> {/* Added padding top */}
             <Button asChild size="lg" className="transition-transform duration-300 ease-in-out hover:scale-105">
               <Link href="#contact">Get Started</Link>
             </Button>

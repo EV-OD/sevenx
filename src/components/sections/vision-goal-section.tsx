@@ -3,7 +3,8 @@ import { Target, Eye } from 'lucide-react';
 export default function VisionGoalSection() {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
-      <div className="container px-6 md:px-8 lg:px-10">
+      {/* Increased horizontal padding px-6 -> px-8, md:px-10 -> md:px-12, lg:px-16 */}
+      <div className="container px-8 md:px-12 lg:px-16">
         <div className="grid gap-10 md:grid-cols-2 md:gap-16 items-start">
           <div className="space-y-4">
             <div className="inline-block rounded-lg bg-primary text-primary-foreground p-3 mb-3">

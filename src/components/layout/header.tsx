@@ -41,12 +41,12 @@ export default function Header() {
     >
       <div className="container flex h-16 items-center justify-between px-6 md:px-8 lg:px-10">
         {/* Logo on the left */}
-        <Link href="/" className="flex items-center space-x-2 text-2xl font-bold text-primary transition-transform duration-300 ease-in-out hover:scale-105">
+        <Link href="/" className="flex items-center space-x-2 text-2xl font-bold text-primary transition-transform duration-300 ease-in-out hover:scale-105 mr-auto">
           <BriefcaseBusiness className="h-6 w-6 text-primary" /> {/* Example icon, replace with your actual logo */}
           <span>ProResponsive</span>
         </Link>
 
-        {/* Navigation on the right */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-2">
           {navItems.map((item) => (
             <Button key={item.label} variant="ghost" asChild className="group text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-accent transition-all duration-200 ease-in-out px-3 py-2">
@@ -58,52 +58,54 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Mobile Navigation Trigger */}
-        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" className="rounded-full hover:bg-accent transition-colors duration-200">
-              <Menu className="h-6 w-6 text-foreground/80" />
-              <span className="sr-only">Toggle Menu</span>
-            </Button>
-          </SheetTrigger>
+        {/* Mobile Navigation Trigger - Moved to the right */}
+        <div className="ml-4 md:hidden"> {/* Add margin for spacing on desktop if needed, hidden on md and up */}
+         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="rounded-full hover:bg-accent transition-colors duration-200">
+                <Menu className="h-6 w-6 text-foreground/80" />
+                <span className="sr-only">Toggle Menu</span>
+              </Button>
+            </SheetTrigger>
 
-          {/* Mobile Navigation Content */}
-          <SheetContent side="right" className="w-full max-w-xs bg-background p-0">
-             <SheetTitle className="sr-only">ProResponsive Menu</SheetTitle>
-             <SheetDescription className="sr-only">Mobile navigation menu for ProResponsive website</SheetDescription>
-            <div className="flex h-full flex-col">
+            {/* Mobile Navigation Content */}
+            <SheetContent side="right" className="w-full max-w-xs bg-background p-0">
+              {/* Added SheetHeader for Accessibility */}
               <div className="flex items-center justify-between p-4 border-b">
-                <Link href="/" className="flex items-center space-x-2 text-xl font-bold text-primary" onClick={closeSheet}>
-                   <BriefcaseBusiness className="h-6 w-6 text-primary" />
-                   <span>ProResponsive</span>
-                </Link>
+                <SheetTitle className="text-xl font-bold text-primary flex items-center gap-2">
+                    <BriefcaseBusiness className="h-6 w-6 text-primary" />
+                    <span>ProResponsive</span>
+                </SheetTitle>
+                 {/* Explicit Close Button */}
                 <Button variant="ghost" size="icon" onClick={closeSheet} className="rounded-full hover:bg-accent transition-colors duration-200">
                   <X className="h-6 w-6 text-foreground/80" />
                   <span className="sr-only">Close Menu</span>
                 </Button>
               </div>
-              <nav className="flex flex-col space-y-2 p-4 flex-grow">
-                {navItems.map((item) => (
-                  <Button
-                    key={item.label}
-                    variant="ghost"
-                    asChild
-                    className="group justify-start text-lg font-medium text-foreground/80 hover:text-foreground hover:bg-accent transition-all duration-200 ease-in-out px-3 py-3"
-                    onClick={closeSheet}
-                  >
-                    <Link href={item.href} className="flex items-center gap-3">
-                       <item.icon className="h-5 w-5 transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                       <span>{item.label}</span>
-                    </Link>
-                  </Button>
-                ))}
-              </nav>
-               <div className="border-t p-4">
-                <p className="text-sm text-muted-foreground text-center">&copy; {new Date().getFullYear()} ProResponsive</p>
-              </div>
-            </div>
-          </SheetContent>
-        </Sheet>
+              <SheetDescription className="sr-only">Mobile navigation menu for ProResponsive website</SheetDescription>
+
+              <nav className="flex flex-col space-y-2 p-4 flex-grow mt-4">
+                  {navItems.map((item) => (
+                    <Button
+                      key={item.label}
+                      variant="ghost"
+                      asChild
+                      className="group justify-start text-lg font-medium text-foreground/80 hover:text-foreground hover:bg-accent transition-all duration-200 ease-in-out px-3 py-3"
+                      onClick={closeSheet}
+                    >
+                      <Link href={item.href} className="flex items-center gap-3">
+                         <item.icon className="h-5 w-5 transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                         <span>{item.label}</span>
+                      </Link>
+                    </Button>
+                  ))}
+                </nav>
+                 <div className="border-t p-4">
+                  <p className="text-sm text-muted-foreground text-center">&copy; {new Date().getFullYear()} ProResponsive</p>
+                </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );
