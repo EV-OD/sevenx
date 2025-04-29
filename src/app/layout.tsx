@@ -2,6 +2,7 @@ import type {Metadata, Viewport} from 'next';
 import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import FloatingElements from '@/components/layout/floating-elements'; // Import the new component
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -32,10 +33,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}> {/* Add relative positioning */}
+        <FloatingElements /> {/* Add floating elements */}
+        <div className="relative z-10"> {/* Ensure content is above floating elements */}
+          {children}
+        </div>
         <Toaster />
       </body>
     </html>
   );
 }
+```
