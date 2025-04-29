@@ -217,27 +217,27 @@ body {
     left: 0;
     width: 30px; /* Keep outline size */
     height: 30px;
-    /* Softer, semi-transparent border */
-    border: 2px solid hsla(var(--primary) / 0.5);
+    /* Changed from border to a semi-transparent background fill */
+    background-color: hsla(var(--primary) / 0.15); /* Semi-transparent primary color */
     border-radius: 50%;
     pointer-events: none; /* Essential */
     z-index: 9998; /* Below dot but above other content */
     transform: translate(-50%, -50%); /* Center the outline */
+    mix-blend-mode: difference; /* Apply blend mode to the fill */
     /* Transition multiple properties for smooth scaling and fade */
-    transition: transform 0.15s ease-out, width 0.2s ease-out, height 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out;
+    transition: transform 0.15s ease-out, width 0.2s ease-out, height 0.2s ease-out, background-color 0.2s ease-out;
   }
 
    /* Cursor scaling effect on hoverable elements (buttons, links) */
   :where(a, button, [role="button"], input[type="submit"], input[type="button"]):hover ~ .cursor-outline {
     transform: translate(-50%, -50%) scale(1.5); /* Scale from center */
-    background-color: hsla(var(--primary) / 0.1); /* Subtle fill on hover */
-    border-color: hsla(var(--primary) / 0.8); /* Make border slightly more opaque */
+    background-color: hsla(var(--primary) / 0.3); /* Increase opacity on hover */
   }
   /* Add more selectors if needed for other interactive elements */
  :where(input[type="text"], input[type="email"], textarea):hover ~ .cursor-outline {
     transform: translate(-50%, -50%) scale(1.2); /* Different scale for inputs */
     border-radius: 4px; /* Change shape for inputs */
-    background-color: hsla(var(--primary) / 0.05);
+    background-color: hsla(var(--primary) / 0.2); /* Slightly different opacity for inputs */
   }
 
 }
