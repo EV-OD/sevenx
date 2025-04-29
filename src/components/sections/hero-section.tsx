@@ -16,10 +16,10 @@ const floatingHeroElements = [
   // Simple Shapes
   { div: true, style: 'bottom-1/5 left-1/6 w-24 h-16 bg-card/10 border border-border/20 rounded-lg animate-float animation-delay-500 shadow-sm' },
 
-  // Blobs (soft, blurred shapes)
-  { div: true, style: 'top-10 left-10 w-48 h-48 bg-primary/5 rounded-full blur-2xl animate-subtle-pulse' },
-  { div: true, style: 'bottom-10 right-10 w-64 h-64 bg-secondary-foreground/5 rounded-full blur-3xl animate-subtle-pulse animation-delay-300' },
-  { div: true, style: 'top-1/3 right-1/4 w-40 h-40 bg-accent/10 rounded-full blur-2xl animate-subtle-pulse animation-delay-500' },
+  // Blobs (soft, blurred shapes) - Updated opacity by removing alpha channel from bg color
+  { div: true, style: 'top-10 left-10 w-48 h-48 bg-primary rounded-full blur-2xl animate-subtle-pulse' }, // Was bg-primary/5
+  { div: true, style: 'bottom-10 right-10 w-64 h-64 bg-secondary-foreground rounded-full blur-3xl animate-subtle-pulse animation-delay-300' }, // Was bg-secondary-foreground/5
+  { div: true, style: 'top-1/3 right-1/4 w-40 h-40 bg-accent rounded-full blur-2xl animate-subtle-pulse animation-delay-500' }, // Was bg-accent/10
 
   // Lines (decorative strokes)
   { div: true, style: 'top-1/5 left-[10%] w-1 h-24 bg-gradient-to-b from-primary/10 to-transparent animate-float-reverse animation-delay-100 transform -rotate-12' },
