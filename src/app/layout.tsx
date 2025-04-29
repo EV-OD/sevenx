@@ -1,18 +1,19 @@
 import type {Metadata, Viewport} from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist } from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import FloatingElements from '@/components/layout/floating-elements'; // Import the new component
+// Removed import for FloatingElements as it's no longer global
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+// No Geist Mono used directly, removing for brevity if not needed elsewhere
+// const geistMono = Geist_Mono({
+//   variable: '--font-geist-mono',
+//   subsets: ['latin'],
+// });
 
 export const metadata: Metadata = {
   title: 'ProResponsive',
@@ -33,11 +34,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}> {/* Add relative positioning */}
-        <FloatingElements /> {/* Add floating elements */}
-        <div className="relative z-10"> {/* Ensure content is above floating elements */}
-          {children}
-        </div>
+      {/* Removed relative positioning as global floating elements are now scoped to HeroSection */}
+      <body className={`${geistSans.variable} antialiased`}>
+        {/* Content remains directly inside the body */}
+        {children}
         <Toaster />
       </body>
     </html>

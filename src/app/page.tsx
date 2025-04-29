@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    // The relative z-10 is now handled in layout.tsx for better structure
+    // Removed relative z-10 as floating elements are now scoped to HeroSection
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow pt-4 pb-8 md:pt-8 md:pb-16"> {/* Add padding top/bottom to main */}
