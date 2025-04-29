@@ -1,3 +1,4 @@
+// src/components/sections/hero-section.tsx
 "use client"; // Required for framer-motion and hooks
 
 import Image from 'next/image';
@@ -5,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion'; // Import motion
-import { Code, BarChart, Briefcase, Settings, Network, Layers, Target, TrendingUp, Activity, Puzzle, ArrowDown, MessageCircle } from 'lucide-react';
+import { Code, BarChart, BriefcaseBusiness, Settings, Network, Layers, Target, TrendingUp, Activity, Puzzle, ArrowDown } from 'lucide-react'; // Replaced Briefcase with BriefcaseBusiness
 import { Badge } from '@/components/ui/badge'; // Import Badge component
 import { useDynamicCursor } from '@/hooks/use-dynamic-cursor'; // Import the cursor hook
 
@@ -15,17 +16,17 @@ const floatingHeroElements = [
   // Icons
   { icon: Code, style: 'top-1/4 left-1/5 w-12 h-12 text-primary/30 animate-float animation-delay-200' },
   { icon: BarChart, style: 'bottom-1/3 right-1/4 w-16 h-16 text-secondary-foreground/20 animate-float-reverse animation-delay-400' },
-  { icon: Briefcase, style: 'top-1/2 right-1/5 w-10 h-10 text-primary/20 animate-float' },
+  { icon: BriefcaseBusiness, style: 'top-1/2 right-1/5 w-10 h-10 text-primary/20 animate-float' }, // Changed icon
   { icon: Settings, style: 'bottom-1/4 left-1/3 w-14 h-14 text-secondary-foreground/15 animate-float-reverse animation-delay-600' },
   { icon: Network, style: 'top-1/5 right-2/5 w-12 h-12 text-primary/25 animate-float animation-delay-300' },
 
   // Simple Shapes
   { div: true, style: 'bottom-1/5 left-1/6 w-24 h-16 bg-card/10 border border-border/20 rounded-lg animate-float animation-delay-500 shadow-sm' },
 
-  // Blobs (soft, blurred shapes) - Updated opacity by removing alpha channel from bg color
-   { div: true, style: 'top-10 left-10 w-48 h-48 bg-primary rounded-full filter blur-3xl animate-subtle-pulse opacity-30' }, // Example blue blob
-  { div: true, style: 'bottom-10 right-10 w-64 h-64 bg-secondary-foreground rounded-full filter blur-3xl animate-subtle-pulse animation-delay-300 opacity-20' }, // Example secondary blob
-  { div: true, style: 'top-1/3 right-1/4 w-40 h-40 bg-accent rounded-full filter blur-2xl animate-subtle-pulse animation-delay-500 opacity-25' }, // Example accent blob
+  // Blobs (soft, blurred shapes) - Updated opacity based on user request (removed specific opacity values here, handled below)
+   { div: true, style: 'top-10 left-10 w-48 h-48 bg-primary rounded-full filter blur-3xl animate-subtle-pulse' }, // Example blue blob
+  { div: true, style: 'bottom-10 right-10 w-64 h-64 bg-secondary-foreground rounded-full filter blur-3xl animate-subtle-pulse animation-delay-300' }, // Example secondary blob
+  { div: true, style: 'top-1/3 right-1/4 w-40 h-40 bg-accent rounded-full filter blur-2xl animate-subtle-pulse animation-delay-500' }, // Example accent blob
 
   // Lines (decorative strokes)
   { div: true, style: 'top-1/5 left-[10%] w-1 h-24 bg-gradient-to-b from-primary/10 to-transparent animate-float-reverse animation-delay-100 transform -rotate-12' },
@@ -70,7 +71,7 @@ export default function HeroSection() {
     <section
       id="home"
       className={cn(
-        "relative w-full py-20 md:py-32 lg:py-40 bg-secondary overflow-hidden", // Increased padding
+        "relative w-full py-16 md:py-24 lg:py-32 bg-secondary overflow-hidden", // Reduced top padding (py-20 -> py-16, etc.)
         "bg-pattern-light dark:bg-pattern-dark" // Keep the dot/grid pattern
       )}
     >
@@ -82,6 +83,8 @@ export default function HeroSection() {
               key={`bg-${index}`}
               className={cn(
                 'absolute blur-[1px]', // Soften the icons slightly
+                 // Make blobs fully opaque as requested
+                (el.style?.includes('blur-2xl') || el.style?.includes('blur-3xl')) ? 'opacity-100' : '',
                 el.style
               )}
               strokeWidth={1.5} // Make icons slightly thinner
@@ -93,8 +96,8 @@ export default function HeroSection() {
                 'absolute', // Base style for all divs
                 // Conditional blur for non-gradient/non-line elements
                 !el.style?.includes('gradient') && !el.style?.includes('inset-0') && 'blur-[1px]',
-                 // Apply filter blur for blob elements explicitly
-                (el.style?.includes('blur-2xl') || el.style?.includes('blur-3xl')) && 'filter',
+                 // Apply filter blur for blob elements explicitly and make opaque
+                (el.style?.includes('blur-2xl') || el.style?.includes('blur-3xl')) ? 'filter opacity-100' : '',
                 el.style // Apply specific styles
               )}
             />
@@ -103,6 +106,7 @@ export default function HeroSection() {
       </div>
 
       {/* Main content container */}
+      {/* Increased horizontal padding px-6 -> px-8, md:px-10 -> md:px-12, lg:px-16 */}
       <div className="container px-8 md:px-12 lg:px-16 grid gap-8 lg:grid-cols-2 lg:gap-16 items-center relative z-10">
         <div className="space-y-6 text-center lg:text-left"> {/* Increased space-y */}
            {/* Apply font, gradient, and animation */}
@@ -198,7 +202,7 @@ export default function HeroSection() {
 
       {/* Trust Logos Section */}
         <motion.div
-          className="container px-8 md:px-12 lg:px-16 mt-16 md:mt-24"
+          className="container px-8 md:px-12 lg:px-16 mt-16 md:mt-24" // Added more top margin
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
@@ -236,3 +240,5 @@ export default function HeroSection() {
     </section>
   );
 }
+
+    
