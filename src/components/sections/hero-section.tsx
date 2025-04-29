@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function HeroSection() {
   return (
     <section id="home" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
-      <div className="container px-4 md:px-6 grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+      <div className="container px-6 md:px-8 lg:px-10 grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
         <div className="space-y-4 text-center lg:text-left">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-primary animate-fade-in-up">
             Crafting Responsive Web Experiences
