@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { Menu, X, HomeIcon, BriefcaseBusiness, Info, FolderKanban, Users, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -69,6 +69,7 @@ export default function Header() {
 
           {/* Mobile Navigation Content */}
           <SheetContent side="right" className="w-full max-w-xs bg-background p-0">
+             <SheetTitle>ProResponsive Menu</SheetTitle>
             <div className="flex h-full flex-col">
               <div className="flex items-center justify-between p-4 border-b">
                 <Link href="/" className="flex items-center space-x-2 text-xl font-bold text-primary" onClick={closeSheet}>
@@ -106,3 +107,4 @@ export default function Header() {
     </header>
   );
 }
+
