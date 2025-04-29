@@ -1,19 +1,21 @@
 import type {Metadata, Viewport} from 'next';
 import { Geist } from 'next/font/google';
+import { Space_Grotesk } from 'next/font/google'; // Import Space Grotesk
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-// Removed import for FloatingElements as it's no longer global
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
 });
 
-// No Geist Mono used directly, removing for brevity if not needed elsewhere
-// const geistMono = Geist_Mono({
-//   variable: '--font-geist-mono',
-//   subsets: ['latin'],
-// });
+// Initialize Space Grotesk
+const spaceGrotesk = Space_Grotesk({
+  variable: '--font-space-grotesk',
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'], // Include desired weights
+});
+
 
 export const metadata: Metadata = {
   title: 'ProResponsive',
@@ -34,9 +36,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      {/* Removed relative positioning as global floating elements are now scoped to HeroSection */}
-      <body className={`${geistSans.variable} antialiased`}>
-        {/* Content remains directly inside the body */}
+      {/* Apply both font variables to the body */}
+      <body className={`${geistSans.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
         {children}
         <Toaster />
       </body>

@@ -1,7 +1,10 @@
+"use client"; // Required for framer-motion
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion'; // Import motion
 import { Code, BarChart, Briefcase, Settings, Network, Layers, Target, TrendingUp, Activity, Puzzle } from 'lucide-react';
 
 // Define floating BACKGROUND elements (icons, simple shapes, blobs, gradients)
@@ -84,22 +87,43 @@ export default function HeroSection() {
       {/* Main content container */}
       <div className="container px-8 md:px-12 lg:px-16 grid gap-6 lg:grid-cols-2 lg:gap-12 items-center relative z-10">
         <div className="space-y-4 text-center lg:text-left">
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-primary animate-fade-in-up">
+           {/* Apply font, gradient, and animation */}
+          <motion.h1
+            className="font-heading text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400"
+            initial={{ opacity: 0, scale: 0.95 }} // Initial animation state
+            animate={{ opacity: 1, scale: 1 }} // Animate to this state
+            transition={{ duration: 0.5, ease: "easeOut" }} // Animation timing
+          >
             Crafting Responsive Web Experiences
-          </h1>
-          <p className="max-w-[600px] text-muted-foreground md:text-xl mx-auto lg:mx-0 animate-fade-in-up animation-delay-200">
+          </motion.h1>
+          <motion.p
+            className="max-w-[600px] text-muted-foreground md:text-xl mx-auto lg:mx-0"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+          >
             We build modern, accessible, and high-performing websites that look great on any device. Let us bring your vision to life.
-          </p>
-          <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center lg:justify-start animate-fade-in-up animation-delay-400 pt-4">
+          </motion.p>
+          <motion.div
+             className="flex flex-col gap-2 min-[400px]:flex-row justify-center lg:justify-start pt-4"
+             initial={{ opacity: 0, y: 10 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+          >
             <Button asChild size="lg" className="transition-transform duration-300 ease-in-out hover:scale-105">
               <Link href="#contact">Get Started</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="transition-transform duration-300 ease-in-out hover:scale-105">
               <Link href="#projects">View Projects</Link>
             </Button>
-          </div>
+          </motion.div>
         </div>
-        <div className="relative flex justify-center animate-fade-in animation-delay-600"> {/* Make image container relative for foreground elements */}
+        <motion.div
+           className="relative flex justify-center"
+           initial={{ opacity: 0, scale: 0.9 }}
+           animate={{ opacity: 1, scale: 1 }}
+           transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+        > {/* Make image container relative for foreground elements */}
           <Image
             src="https://picsum.photos/600/400?grayscale"
             width={600}
@@ -126,7 +150,7 @@ export default function HeroSection() {
                />
              )
            ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
