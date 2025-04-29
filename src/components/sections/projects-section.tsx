@@ -14,7 +14,7 @@ const projects = [
 export default function ProjectsSection() {
   return (
     <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
-      <div className="container px-4 md:px-6">
+      <div className="container px-6 md:px-8 lg:px-10">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">My Projects</h2>
           <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -29,8 +29,8 @@ export default function ProjectsSection() {
                    <Image
                     src={project.imageUrl}
                     alt={`Project: ${project.title}`}
-                    layout="fill"
-                    objectFit="cover"
+                    fill={true}
+                    style={{objectFit: 'cover'}}
                     className="transition-transform duration-500 ease-in-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex flex-col justify-end p-4">

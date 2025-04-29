@@ -34,7 +34,7 @@ export default function NewsletterSection() {
 
   return (
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-background">
-      <div className="container px-4 md:px-6">
+      <div className="container px-6 md:px-8 lg:px-10">
         <div className="mx-auto max-w-xl space-y-6 text-center">
            <div className="inline-block rounded-lg bg-primary text-primary-foreground p-3 mb-3">
              <Mail className="h-7 w-7" />

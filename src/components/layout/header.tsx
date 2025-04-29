@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { Menu, X, HomeIcon, BriefcaseBusiness, Info, FolderKanban, Users, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -39,7 +39,7 @@ export default function Header() {
         "supports-[backdrop-filter]:bg-background/60"
       )}
     >
-      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+      <div className="container flex h-16 items-center justify-between px-6 md:px-8 lg:px-10">
         {/* Logo on the left */}
         <Link href="/" className="flex items-center space-x-2 text-2xl font-bold text-primary transition-transform duration-300 ease-in-out hover:scale-105">
           <BriefcaseBusiness className="h-6 w-6 text-primary" /> {/* Example icon, replace with your actual logo */}
@@ -69,7 +69,8 @@ export default function Header() {
 
           {/* Mobile Navigation Content */}
           <SheetContent side="right" className="w-full max-w-xs bg-background p-0">
-             <SheetTitle>ProResponsive Menu</SheetTitle>
+             <SheetTitle className="sr-only">ProResponsive Menu</SheetTitle>
+             <SheetDescription className="sr-only">Mobile navigation menu for ProResponsive website</SheetDescription>
             <div className="flex h-full flex-col">
               <div className="flex items-center justify-between p-4 border-b">
                 <Link href="/" className="flex items-center space-x-2 text-xl font-bold text-primary" onClick={closeSheet}>
@@ -107,4 +108,3 @@ export default function Header() {
     </header>
   );
 }
-
