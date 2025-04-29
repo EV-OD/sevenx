@@ -1,5 +1,5 @@
 import type {Metadata, Viewport} from 'next';
-import {Geist, Geist_Mono} from 'next/font/google';
+import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import FloatingElements from '@/components/layout/floating-elements'; // Import the new component
@@ -43,4 +43,3 @@ export default function RootLayout({
     </html>
   );
 }
-```
