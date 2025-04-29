@@ -22,7 +22,8 @@ export default function Home() {
     // Removed relative z-10 as floating elements are now scoped to HeroSection
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow pt-4 pb-8 md:pt-8 md:pb-16"> {/* Add padding top/bottom to main */}
+      {/* Removed pt-4 and md:pt-8 for less top padding */}
+      <main className="flex-grow pb-8 md:pb-16">
         <HeroSection />
         <ServicesSection />
         <ValuePropositionSection />
