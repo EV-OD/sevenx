@@ -24,9 +24,9 @@ const floatingHeroElements = [
   { div: true, style: 'bottom-1/5 left-1/6 w-24 h-16 bg-card/10 border border-border/20 rounded-lg animate-float animation-delay-500 shadow-sm' },
 
   // Blobs (soft, blurred shapes) - Updated opacity based on user request (removed specific opacity values here, handled below)
-   { div: true, style: 'top-10 left-10 w-48 h-48 bg-primary rounded-full filter blur-3xl animate-subtle-pulse' }, // Example blue blob
-  { div: true, style: 'bottom-10 right-10 w-64 h-64 bg-secondary-foreground rounded-full filter blur-3xl animate-subtle-pulse animation-delay-300' }, // Example secondary blob
-  { div: true, style: 'top-1/3 right-1/4 w-40 h-40 bg-accent rounded-full filter blur-2xl animate-subtle-pulse animation-delay-500' }, // Example accent blob
+   { div: true, style: 'top-10 left-10 w-48 h-48 bg-primary rounded-full filter blur-3xl animate-subtle-pulse opacity-100' }, // Example blue blob
+  { div: true, style: 'bottom-10 right-10 w-64 h-64 bg-secondary-foreground rounded-full filter blur-3xl animate-subtle-pulse animation-delay-300 opacity-100' }, // Example secondary blob
+  { div: true, style: 'top-1/3 right-1/4 w-40 h-40 bg-accent rounded-full filter blur-2xl animate-subtle-pulse animation-delay-500 opacity-100' }, // Example accent blob
 
   // Lines (decorative strokes)
   { div: true, style: 'top-1/5 left-[10%] w-1 h-24 bg-gradient-to-b from-primary/10 to-transparent animate-float-reverse animation-delay-100 transform -rotate-12' },
@@ -110,7 +110,7 @@ export default function HeroSection() {
       {/* Grid layout ensures text is first on mobile, image is second */}
       <div className="container px-8 md:px-12 lg:px-16 grid gap-8 lg:grid-cols-2 lg:gap-16 items-center relative z-10">
         {/* Text Content - Order 1 on all screens by default */}
-        <div className="space-y-6 text-center lg:text-left"> {/* Increased space-y */}
+        <div className="space-y-6 text-center lg:text-left lg:order-1"> {/* Increased space-y, ensure text is first on lg */}
            {/* Apply font, gradient, and animation */}
           <motion.h1
             className="font-heading text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400" // Increased font size
@@ -169,8 +169,9 @@ export default function HeroSection() {
         </div>
 
         {/* Image Container - Order 2 on mobile, Order last (right) on large screens */}
+        {/* Added 'hidden lg:flex' to hide on mobile and show on large screens */}
         <motion.div
-           className="relative flex justify-center lg:order-last" // Ensure image is last on large screens
+           className="relative hidden lg:flex justify-center lg:order-last" // Hide on mobile, show on lg, ensure image is last on large screens
            initial={{ opacity: 0, scale: 0.9 }}
            animate={{
              opacity: 1,
@@ -259,5 +260,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
-    
