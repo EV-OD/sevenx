@@ -201,33 +201,43 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 8px;
+    width: 8px; /* Keep dot size */
     height: 8px;
     background-color: hsl(var(--primary));
     border-radius: 50%;
-    pointer-events: none;
+    pointer-events: none; /* Essential */
     z-index: 9999;
-    mix-blend-mode: difference; /* Example blend mode */
-    transition: transform 0.1s ease-out; /* Smooth movement */
+    mix-blend-mode: difference; /* Good blend mode for visibility */
+    transform: translate(-50%, -50%); /* Center the dot on the actual cursor */
   }
 
   .cursor-outline {
     position: fixed;
     top: 0;
     left: 0;
-    width: 30px;
+    width: 30px; /* Keep outline size */
     height: 30px;
+    /* Softer, semi-transparent border */
     border: 2px solid hsla(var(--primary) / 0.5);
     border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.15s ease-out, width 0.2s ease-out, height 0.2s ease-out; /* Smooth movement and scaling */
+    pointer-events: none; /* Essential */
+    z-index: 9998; /* Below dot but above other content */
+    transform: translate(-50%, -50%); /* Center the outline */
+    /* Transition multiple properties for smooth scaling and fade */
+    transition: transform 0.15s ease-out, width 0.2s ease-out, height 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out;
   }
 
-   /* Cursor scaling effect on hoverable elements */
-  :where(a, button):hover ~ .cursor-outline {
-    transform: scale(1.5);
-    background-color: hsla(var(--primary) / 0.1);
+   /* Cursor scaling effect on hoverable elements (buttons, links) */
+  :where(a, button, [role="button"], input[type="submit"], input[type="button"]):hover ~ .cursor-outline {
+    transform: translate(-50%, -50%) scale(1.5); /* Scale from center */
+    background-color: hsla(var(--primary) / 0.1); /* Subtle fill on hover */
+    border-color: hsla(var(--primary) / 0.8); /* Make border slightly more opaque */
+  }
+  /* Add more selectors if needed for other interactive elements */
+ :where(input[type="text"], input[type="email"], textarea):hover ~ .cursor-outline {
+    transform: translate(-50%, -50%) scale(1.2); /* Different scale for inputs */
+    border-radius: 4px; /* Change shape for inputs */
+    background-color: hsla(var(--primary) / 0.05);
   }
 
 }
