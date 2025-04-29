@@ -84,6 +84,10 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    /* Remove default cursor when dynamic cursor is active */
+    &.dynamic-cursor-active {
+      cursor: none;
+    }
   }
 
   /* Animation keyframes */
@@ -122,6 +126,17 @@ body {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
   }
+
+   @keyframes bounce {
+      0%, 100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      }
+      50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      }
+    }
 }
 
 /* Move animation utility classes to @layer utilities */
@@ -160,6 +175,10 @@ body {
       animation: slow-spin 25s linear infinite;
   }
 
+  .animate-bounce {
+    animation: bounce 1s infinite;
+  }
+
 
   /* Add background pattern utilities */
   .bg-pattern-light {
@@ -176,4 +195,39 @@ body {
       radial-gradient(hsla(var(--border)/0.4) 0.5px, transparent 0.5px);
     background-size: 50px 50px, 50px 50px, 10px 10px; /* Grid lines, dots */
   }
+
+  /* Styles for Dynamic Cursor */
+  .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: hsl(var(--primary));
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference; /* Example blend mode */
+    transition: transform 0.1s ease-out; /* Smooth movement */
+  }
+
+  .cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border: 2px solid hsla(var(--primary) / 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease-out, width 0.2s ease-out, height 0.2s ease-out; /* Smooth movement and scaling */
+  }
+
+   /* Cursor scaling effect on hoverable elements */
+  :where(a, button):hover ~ .cursor-outline {
+    transform: scale(1.5);
+    background-color: hsla(var(--primary) / 0.1);
+  }
+
 }

@@ -10,6 +10,7 @@ import TeamSection from '@/components/sections/team-section';
 import NewsletterSection from '@/components/sections/newsletter-section';
 import FooterSection from '@/components/sections/footer-section';
 import Header from '@/components/layout/header';
+import FloatingCTAButton from '@/components/layout/floating-cta-button'; // Import the new component
 
 export const metadata: Metadata = {
   title: 'ProResponsive - Professional & Responsive Web Design',
@@ -32,6 +33,7 @@ export default function Home() {
         <NewsletterSection />
       </main>
       <FooterSection />
+      <FloatingCTAButton /> {/* Add the floating CTA button */}
     </div>
   );
 }
