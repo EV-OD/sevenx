@@ -4,7 +4,8 @@ import { Twitter, Linkedin, Github } from 'lucide-react';
 export default function FooterSection() {
   return (
     <footer className="w-full py-8 bg-primary text-primary-foreground">
-      <div className="container px-6 md:px-8 lg:px-10 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+      {/* Increased horizontal padding px-6 -> px-8, md:px-10 -> md:px-12, lg:px-16 */}
+      <div className="container px-8 md:px-12 lg:px-16 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
         <div className="text-center md:text-left">
           <p className="text-sm">&copy; {new Date().getFullYear()} ProResponsive. All rights reserved.</p>
         </div>

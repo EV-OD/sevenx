@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow pt-4 pb-8 md:pt-8 md:pb-16"> {/* Add padding top/bottom to main */}
         <HeroSection />
         <ServicesSection />
         <ValuePropositionSection />
