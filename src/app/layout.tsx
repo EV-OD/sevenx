@@ -3,6 +3,7 @@ import { Geist } from 'next/font/google';
 import { Space_Grotesk } from 'next/font/google'; // Import Space Grotesk
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import DynamicCursor from '@/components/layout/dynamic-cursor'; // Import DynamicCursor
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -38,6 +39,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       {/* Apply both font variables to the body */}
       <body className={`${geistSans.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
+        <DynamicCursor /> {/* Add the dynamic cursor component */}
         {children}
         <Toaster />
       </body>

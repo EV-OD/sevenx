@@ -1,11 +1,14 @@
-"use client"; // Required for framer-motion
+"use client"; // Required for framer-motion and hooks
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion'; // Import motion
-import { Code, BarChart, Briefcase, Settings, Network, Layers, Target, TrendingUp, Activity, Puzzle } from 'lucide-react';
+import { Code, BarChart, Briefcase, Settings, Network, Layers, Target, TrendingUp, Activity, Puzzle, ArrowDown, MessageCircle } from 'lucide-react';
+import { Badge } from '@/components/ui/badge'; // Import Badge component
+import { useDynamicCursor } from '@/hooks/use-dynamic-cursor'; // Import the cursor hook
+
 
 // Define floating BACKGROUND elements (icons, simple shapes, blobs, gradients)
 const floatingHeroElements = [
@@ -20,9 +23,9 @@ const floatingHeroElements = [
   { div: true, style: 'bottom-1/5 left-1/6 w-24 h-16 bg-card/10 border border-border/20 rounded-lg animate-float animation-delay-500 shadow-sm' },
 
   // Blobs (soft, blurred shapes) - Updated opacity by removing alpha channel from bg color
-  { div: true, style: 'top-10 left-10 w-48 h-48 bg-primary rounded-full blur-2xl animate-subtle-pulse' }, // Was bg-primary/5
-  { div: true, style: 'bottom-10 right-10 w-64 h-64 bg-secondary-foreground rounded-full blur-3xl animate-subtle-pulse animation-delay-300' }, // Was bg-secondary-foreground/5
-  { div: true, style: 'top-1/3 right-1/4 w-40 h-40 bg-accent rounded-full blur-2xl animate-subtle-pulse animation-delay-500' }, // Was bg-accent/10
+   { div: true, style: 'top-10 left-10 w-48 h-48 bg-primary rounded-full filter blur-3xl animate-subtle-pulse opacity-30' }, // Example blue blob
+  { div: true, style: 'bottom-10 right-10 w-64 h-64 bg-secondary-foreground rounded-full filter blur-3xl animate-subtle-pulse animation-delay-300 opacity-20' }, // Example secondary blob
+  { div: true, style: 'top-1/3 right-1/4 w-40 h-40 bg-accent rounded-full filter blur-2xl animate-subtle-pulse animation-delay-500 opacity-25' }, // Example accent blob
 
   // Lines (decorative strokes)
   { div: true, style: 'top-1/5 left-[10%] w-1 h-24 bg-gradient-to-b from-primary/10 to-transparent animate-float-reverse animation-delay-100 transform -rotate-12' },
@@ -48,13 +51,26 @@ const floatingForegroundElements = [
   { div: true, style: 'absolute top-2/3 right-1/3 w-10 h-10 bg-gradient-to-br from-primary/10 to-accent/10 rounded-sm animate-slow-spin z-20 opacity-30 shadow animation-delay-400' }, // Spinning gradient square
 ];
 
+// Dummy trust logos (replace with actual SVGs or images)
+const trustLogos = [
+  { src: '/logos/logo-placeholder-1.svg', alt: 'Partner Logo 1' },
+  { src: '/logos/logo-placeholder-2.svg', alt: 'Partner Logo 2' },
+  { src: '/logos/logo-placeholder-3.svg', alt: 'Partner Logo 3' },
+  { src: '/logos/logo-placeholder-4.svg', alt: 'Partner Logo 4' },
+  { src: '/logos/logo-placeholder-5.svg', alt: 'Partner Logo 5' },
+];
+
+// Tech stack badges
+const techBadges = ['Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'Responsive Design'];
 
 export default function HeroSection() {
+  useDynamicCursor(); // Activate dynamic cursor for this section
+
   return (
     <section
       id="home"
       className={cn(
-        "relative w-full py-12 md:py-24 lg:py-32 bg-secondary overflow-hidden", // Ensure overflow is hidden for absolute elements
+        "relative w-full py-20 md:py-32 lg:py-40 bg-secondary overflow-hidden", // Increased padding
         "bg-pattern-light dark:bg-pattern-dark" // Keep the dot/grid pattern
       )}
     >
@@ -77,6 +93,8 @@ export default function HeroSection() {
                 'absolute', // Base style for all divs
                 // Conditional blur for non-gradient/non-line elements
                 !el.style?.includes('gradient') && !el.style?.includes('inset-0') && 'blur-[1px]',
+                 // Apply filter blur for blob elements explicitly
+                (el.style?.includes('blur-2xl') || el.style?.includes('blur-3xl')) && 'filter',
                 el.style // Apply specific styles
               )}
             />
@@ -85,51 +103,76 @@ export default function HeroSection() {
       </div>
 
       {/* Main content container */}
-      <div className="container px-8 md:px-12 lg:px-16 grid gap-6 lg:grid-cols-2 lg:gap-12 items-center relative z-10">
-        <div className="space-y-4 text-center lg:text-left">
+      <div className="container px-8 md:px-12 lg:px-16 grid gap-8 lg:grid-cols-2 lg:gap-16 items-center relative z-10">
+        <div className="space-y-6 text-center lg:text-left"> {/* Increased space-y */}
            {/* Apply font, gradient, and animation */}
           <motion.h1
-            className="font-heading text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400"
-            initial={{ opacity: 0, scale: 0.95 }} // Initial animation state
-            animate={{ opacity: 1, scale: 1 }} // Animate to this state
-            transition={{ duration: 0.5, ease: "easeOut" }} // Animation timing
+            className="font-heading text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400" // Increased font size
+            initial={{ opacity: 0, scale: 0.95, y: 10 }} // Initial animation state
+            animate={{ opacity: 1, scale: 1, y: 0 }} // Animate to this state
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }} // Animation timing
           >
             Crafting Responsive Web Experiences
           </motion.h1>
           <motion.p
-            className="max-w-[600px] text-muted-foreground md:text-xl mx-auto lg:mx-0"
+            className="max-w-[600px] text-muted-foreground md:text-xl lg:text-lg xl:text-xl mx-auto lg:mx-0" // Adjusted text size for better hierarchy
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
           >
             We build modern, accessible, and high-performing websites that look great on any device. Let us bring your vision to life.
           </motion.p>
-          <motion.div
-             className="flex flex-col gap-2 min-[400px]:flex-row justify-center lg:justify-start pt-4"
+
+           {/* Tech Stack Badges */}
+           <motion.div
+             className="flex flex-wrap gap-2 justify-center lg:justify-start pt-2"
              initial={{ opacity: 0, y: 10 }}
              animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+             transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+           >
+             {techBadges.map((tech, index) => (
+               <Badge key={index} variant="secondary" className="transition-transform hover:scale-105 cursor-default">{tech}</Badge>
+             ))}
+           </motion.div>
+
+          <motion.div
+             className="flex flex-col gap-3 sm:flex-row justify-center lg:justify-start pt-4" // Increased gap
+             initial={{ opacity: 0, y: 10 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.5, delay: 0.7, ease: "easeOut" }}
           >
-            <Button asChild size="lg" className="transition-transform duration-300 ease-in-out hover:scale-105">
+            <Button asChild size="lg" className="transition-transform duration-300 ease-in-out hover:scale-105 shadow-md">
               <Link href="#contact">Get Started</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="transition-transform duration-300 ease-in-out hover:scale-105">
               <Link href="#projects">View Projects</Link>
             </Button>
           </motion.div>
+
+           {/* Metrics / Stats Section */}
+           <motion.div
+            className="flex gap-6 sm:gap-10 justify-center lg:justify-start pt-6 text-sm text-muted-foreground"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.9, ease: "easeOut" }}
+          >
+              <div><span className="text-2xl font-bold text-primary mr-1">120+</span> Projects Delivered</div>
+              <div><span className="text-2xl font-bold text-primary mr-1">98%</span> Client Satisfaction</div>
+              <div><span className="text-2xl font-bold text-primary mr-1">5+</span> Years Experience</div>
+           </motion.div>
         </div>
         <motion.div
            className="relative flex justify-center"
            initial={{ opacity: 0, scale: 0.9 }}
            animate={{ opacity: 1, scale: 1 }}
-           transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+           transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }} // Adjusted delay and duration
         > {/* Make image container relative for foreground elements */}
           <Image
             src="https://picsum.photos/600/400?grayscale"
             width={600}
             height={400}
             alt="Hero Image - Responsive Design Showcase"
-            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last transition-transform duration-500 ease-in-out hover:scale-105 shadow-lg" // Added shadow-lg
+            className="mx-auto aspect-[3/2] overflow-hidden rounded-xl object-cover sm:w-full lg:order-last transition-transform duration-500 ease-in-out hover:scale-105 shadow-xl border border-border/10" // Added shadow-xl and subtle border
             priority
           />
           {/* Floating FOREGROUND elements positioned relative to the image container */}
@@ -152,6 +195,44 @@ export default function HeroSection() {
            ))}
         </motion.div>
       </div>
+
+      {/* Trust Logos Section */}
+        <motion.div
+          className="container px-8 md:px-12 lg:px-16 mt-16 md:mt-24"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
+        >
+          <p className="text-center text-sm font-medium text-muted-foreground mb-6">
+            Trusted by innovative companies worldwide
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
+            {trustLogos.map((logo, index) => (
+              <div key={index} className="h-6 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition duration-300 flex items-center justify-center">
+                 {/* Placeholder SVG - Replace with actual image tags or SVGs */}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" height="24" className="fill-current">
+                    <rect width="100" height="30" rx="3" fill="hsl(var(--muted))"/>
+                    <text x="50" y="20" textAnchor="middle" fontSize="10" fill="hsl(var(--muted-foreground))">{logo.alt}</text>
+                </svg>
+                <span className="sr-only">{logo.alt}</span>
+              </div>
+
+            ))}
+          </div>
+        </motion.div>
+
+
+       {/* Scroll Down Indicator */}
+       <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-muted-foreground hidden md:block"
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 1 }}
+           transition={{ duration: 0.5, delay: 1.5 }}
+        >
+         <ArrowDown className="h-6 w-6" />
+          <span className="sr-only">Scroll down</span>
+       </motion.div>
+
     </section>
   );
 }
