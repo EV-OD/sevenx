@@ -84,21 +84,6 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-    /* Add a subtle grid overlay */
-    background-image:
-      linear-gradient(to right, hsla(var(--border)/0.5) 1px, transparent 1px),
-      linear-gradient(to bottom, hsla(var(--border)/0.5) 1px, transparent 1px),
-      radial-gradient(hsla(var(--border)/0.8) 0.5px, transparent 0.5px);
-    background-size: 50px 50px, 50px 50px, 10px 10px; /* Grid lines, dots */
-  }
-
-  /* Dark mode patterns */
-  .dark body {
-    background-image:
-      linear-gradient(to right, hsla(var(--border)/0.3) 1px, transparent 1px),
-      linear-gradient(to bottom, hsla(var(--border)/0.3) 1px, transparent 1px),
-      radial-gradient(hsla(var(--border)/0.4) 0.5px, transparent 0.5px);
-    background-size: 50px 50px, 50px 50px, 10px 10px; /* Grid lines, dots */
   }
 
   /* Animation keyframes */
@@ -151,4 +136,20 @@ body {
   .animation-delay-400 { animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards; }
   .animation-delay-600 { animation-delay: 0.6s; opacity: 0; animation-fill-mode: forwards; }
   .animation-delay-300 { animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards; } /* Added missing delay */
+
+  /* Add background pattern utilities */
+  .bg-pattern-light {
+    background-image:
+      linear-gradient(to right, hsla(var(--border)/0.5) 1px, transparent 1px),
+      linear-gradient(to bottom, hsla(var(--border)/0.5) 1px, transparent 1px),
+      radial-gradient(hsla(var(--border)/0.8) 0.5px, transparent 0.5px);
+    background-size: 50px 50px, 50px 50px, 10px 10px; /* Grid lines, dots */
+  }
+  .dark .bg-pattern-dark {
+    background-image:
+      linear-gradient(to right, hsla(var(--border)/0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, hsla(var(--border)/0.3) 1px, transparent 1px),
+      radial-gradient(hsla(var(--border)/0.4) 0.5px, transparent 0.5px);
+    background-size: 50px 50px, 50px 50px, 10px 10px; /* Grid lines, dots */
+  }
 }
