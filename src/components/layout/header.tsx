@@ -40,11 +40,13 @@ export default function Header() {
       )}
     >
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="text-2xl font-bold text-primary transition-transform duration-300 ease-in-out hover:scale-105">
-          ProResponsive
+        {/* Logo on the left */}
+        <Link href="/" className="flex items-center space-x-2 text-2xl font-bold text-primary transition-transform duration-300 ease-in-out hover:scale-105">
+          <BriefcaseBusiness className="h-6 w-6 text-primary" /> {/* Example icon, replace with your actual logo */}
+          <span>ProResponsive</span>
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Navigation on the right */}
         <nav className="hidden md:flex items-center space-x-2">
           {navItems.map((item) => (
             <Button key={item.label} variant="ghost" asChild className="group text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-accent transition-all duration-200 ease-in-out px-3 py-2">
@@ -69,8 +71,9 @@ export default function Header() {
           <SheetContent side="right" className="w-full max-w-xs bg-background p-0">
             <div className="flex h-full flex-col">
               <div className="flex items-center justify-between p-4 border-b">
-                <Link href="/" className="text-xl font-bold text-primary" onClick={closeSheet}>
-                  ProResponsive
+                <Link href="/" className="flex items-center space-x-2 text-xl font-bold text-primary" onClick={closeSheet}>
+                   <BriefcaseBusiness className="h-6 w-6 text-primary" />
+                   <span>ProResponsive</span>
                 </Link>
                 <Button variant="ghost" size="icon" onClick={closeSheet} className="rounded-full hover:bg-accent transition-colors duration-200">
                   <X className="h-6 w-6 text-foreground/80" />
