@@ -39,9 +39,10 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"> {/* Increased gap */}
           {services.map((service, index) => (
             <Card key={index} className="flex flex-col items-center text-center p-6 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl group border-border/80 hover:border-primary/30"> {/* Added border styling, increased shadow */}
-              <CardHeader className="p-0 mb-5"> {/* Increased margin bottom */}
-                 <div className="bg-primary text-primary-foreground rounded-full p-4 inline-flex mb-5 transition-all duration-300 ease-in-out group-hover:bg-primary/90 group-hover:scale-110 shadow-md"> {/* Increased padding, margin, added shadow, scale */}
-                   <service.icon className="h-9 w-9" /> {/* Increased icon size */}
+              <CardHeader className="p-0 mb-5 flex flex-col items-center"> {/* Ensure CardHeader content is centered */}
+                 {/* Updated div: fixed size, centered content */}
+                 <div className="bg-primary text-primary-foreground rounded-full w-20 h-20 inline-flex items-center justify-center mb-5 transition-all duration-300 ease-in-out group-hover:bg-primary/90 group-hover:scale-110 shadow-md">
+                   <service.icon className="h-9 w-9" /> {/* Icon size remains */}
                  </div>
                 <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">{service.title}</CardTitle> {/* Added hover color */}
               </CardHeader>

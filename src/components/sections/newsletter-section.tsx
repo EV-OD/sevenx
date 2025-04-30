@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, type FormEvent } from 'react';
@@ -67,37 +68,39 @@ export default function NewsletterSection() {
              </CardDescription>
            </CardHeader>
            <CardContent className="p-6 md:p-8"> {/* Increased padding */}
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 items-center"> {/* Added items-center */}
-              <div className="relative flex-grow w-full">
-                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground pointer-events-none" /> {/* Added icon inside input */}
-                  <Input
-                      type="email"
-                      placeholder="your.email@example.com"
-                      className="pl-10 pr-4 py-2 h-11 text-base" // Adjusted padding, height, text size
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      aria-label="Email for newsletter"
-                      required
-                      disabled={isLoading} // Disable input while loading
-                  />
-              </div>
-              <Button
-                  type="submit"
-                  size="lg" // Made button large
-                  className="w-full sm:w-auto transition-all duration-300 ease-in-out hover:scale-105 shadow-md group" // Added shadow, group class
-                  disabled={isLoading} // Disable button while loading
-              >
-                 {isLoading ? (
-                     <span className="animate-spin mr-2 h-5 w-5 border-t-2 border-r-2 border-primary-foreground rounded-full"></span>
-                 ) : (
-                    <Send className="mr-2 h-5 w-5 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" /> // Added Send icon
-                 )}
-                {isLoading ? 'Subscribing...' : 'Subscribe'}
-              </Button>
-            </form>
-            <p className="text-xs text-muted-foreground mt-4 text-center sm:text-left">
-                We respect your privacy. Unsubscribe at any time.
-            </p>
+             <> {/* Wrap children in a Fragment */}
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 items-center"> {/* Added items-center */}
+                  <div className="relative flex-grow w-full">
+                     <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground pointer-events-none" /> {/* Added icon inside input */}
+                      <Input
+                          type="email"
+                          placeholder="your.email@example.com"
+                          className="pl-10 pr-4 py-2 h-11 text-base" // Adjusted padding, height, text size
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          aria-label="Email for newsletter"
+                          required
+                          disabled={isLoading} // Disable input while loading
+                      />
+                  </div>
+                  <Button
+                      type="submit"
+                      size="lg" // Made button large
+                      className="w-full sm:w-auto transition-all duration-300 ease-in-out hover:scale-105 shadow-md group" // Added shadow, group class
+                      disabled={isLoading} // Disable button while loading
+                  >
+                     {isLoading ? (
+                         <span className="animate-spin mr-2 h-5 w-5 border-t-2 border-r-2 border-primary-foreground rounded-full"></span>
+                     ) : (
+                        <Send className="mr-2 h-5 w-5 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" /> // Added Send icon
+                     )}
+                    {isLoading ? 'Subscribing...' : 'Subscribe'}
+                  </Button>
+                </form>
+                <p className="text-xs text-muted-foreground mt-4 text-center sm:text-left">
+                    We respect your privacy. Unsubscribe at any time.
+                </p>
+             </>
            </CardContent>
         </Card>
       </div>

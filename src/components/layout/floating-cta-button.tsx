@@ -20,9 +20,11 @@ const FloatingCTAButton = () => {
         className="rounded-full shadow-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-transform duration-300 ease-in-out hover:scale-110 pl-5 pr-6 py-3 group" // Adjusted padding
       >
         <Link href="#contact" className="flex items-center gap-2">
-          <MessageCircle className="h-5 w-5 group-hover:animate-pulse" />
-          <span className="hidden sm:inline">Let's Talk</span> {/* Hide text on very small screens */}
-          <ArrowRight className="h-5 w-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+          <span className="flex items-center gap-2"> {/* Wrap children in a single element */}
+            <MessageCircle className="h-5 w-5 group-hover:animate-pulse" />
+            <span className="hidden sm:inline">Let's Talk</span> {/* Hide text on very small screens */}
+            <ArrowRight className="h-5 w-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+          </span>
         </Link>
       </Button>
     </motion.div>
