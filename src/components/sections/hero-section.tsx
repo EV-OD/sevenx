@@ -148,10 +148,10 @@ export default function HeroSection() {
              transition={{ duration: 0.5, delay: 0.7, ease: "easeOut" }}
           >
             <Button asChild size="lg" className="transition-transform duration-300 ease-in-out hover:scale-105 shadow-md">
-              <Link href="#contact">Get Started</Link>
+              <Link href="#contact"><span>Get Started</span></Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="transition-transform duration-300 ease-in-out hover:scale-105">
-              <Link href="#projects">View Projects</Link>
+              <Link href="#projects"><span>View Projects</span></Link>
             </Button>
           </motion.div>
 

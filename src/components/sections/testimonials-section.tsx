@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Star, Quote } from 'lucide-react'; // Added Quote icon
@@ -57,10 +58,12 @@ export default function TestimonialsSection() {
                  </div>
               </CardHeader>
               <CardContent className="p-6 pt-2 flex-grow relative"> {/* Added relative positioning */}
-                 <Quote className="absolute top-4 left-2 h-8 w-8 text-primary/10 transform -translate-x-1/2 -translate-y-1/2" strokeWidth={1.5} /> {/* Added Quote icon */}
-                <p className="text-muted-foreground italic leading-relaxed pl-4"> {/* Added leading-relaxed, padding left */}
-                  {testimonial.quote}
-                </p>
+                 <> {/* Wrap CardContent children in a Fragment */}
+                   <Quote className="absolute top-4 left-2 h-8 w-8 text-primary/10 transform -translate-x-1/2 -translate-y-1/2" strokeWidth={1.5} /> {/* Added Quote icon */}
+                  <p className="text-muted-foreground italic leading-relaxed pl-4"> {/* Added leading-relaxed, padding left */}
+                    {testimonial.quote}
+                  </p>
+                 </>
               </CardContent>
               <CardFooter className="p-6 pt-4 flex justify-start border-t border-border/50 mt-auto"> {/* Added border-top, margin-top auto */}
                  <div className="flex gap-1">

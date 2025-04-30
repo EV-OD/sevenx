@@ -1,3 +1,4 @@
+
 import { Target, Eye } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'; // Import Card components
 
@@ -16,9 +17,11 @@ export default function VisionGoalSection() {
               <CardTitle className="text-2xl font-bold text-primary sm:text-3xl font-heading m-0">Our Vision</CardTitle> {/* Added font-heading, removed default margin */}
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground md:text-lg leading-relaxed"> {/* Added leading-relaxed */}
-                To be a leading force in creating innovative and accessible web solutions that empower businesses and individuals to thrive in the digital landscape.
-              </p>
+              <> {/* Wrap CardContent children in a Fragment */}
+                <p className="text-muted-foreground md:text-lg leading-relaxed"> {/* Added leading-relaxed */}
+                  To be a leading force in creating innovative and accessible web solutions that empower businesses and individuals to thrive in the digital landscape.
+                </p>
+              </>
             </CardContent>
           </Card>
           <Card className="border-l-4 border-primary shadow-sm hover:shadow-md transition-shadow duration-300"> {/* Use Card component */}
@@ -29,9 +32,11 @@ export default function VisionGoalSection() {
               <CardTitle className="text-2xl font-bold text-primary sm:text-3xl font-heading m-0">Our Goal</CardTitle> {/* Added font-heading, removed default margin */}
             </CardHeader>
              <CardContent>
-              <p className="text-muted-foreground md:text-lg leading-relaxed"> {/* Added leading-relaxed */}
-                Our primary goal is to deliver exceptional, responsive websites that exceed client expectations through collaboration, technical expertise, and a commitment to quality and performance.
-              </p>
+                <> {/* Wrap CardContent children in a Fragment */}
+                  <p className="text-muted-foreground md:text-lg leading-relaxed"> {/* Added leading-relaxed */}
+                    Our primary goal is to deliver exceptional, responsive websites that exceed client expectations through collaboration, technical expertise, and a commitment to quality and performance.
+                  </p>
+                </>
             </CardContent>
           </Card>
         </div>

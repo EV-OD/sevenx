@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
@@ -26,51 +27,60 @@ export default function ProjectsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8"> {/* Changed to 2 columns for lg, increased gap */}
           {projects.map((project) => (
             <Card key={project.id} className="overflow-hidden group transition-all duration-300 ease-in-out hover:shadow-xl rounded-lg border-border/80 hover:border-primary/30 flex flex-col md:flex-row"> {/* Use flex for side-by-side layout on md+ */}
-               {/* Image container - takes 40% width on medium screens and up */}
-              <div className="relative w-full md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
-                 <Image
-                  src={project.imageUrl}
-                  alt={`Project: ${project.title}`}
-                  fill={true}
-                  style={{objectFit: 'cover'}}
-                  className="transition-transform duration-500 ease-in-out group-hover:scale-105"
-                />
-                 {/* Subtle overlay on image hover */}
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
 
-               {/* Content container - takes 60% width on medium screens and up */}
-              <CardContent className="p-6 flex flex-col justify-between w-full md:w-3/5"> {/* Adjusted padding */}
-                 <div>
-                   <h3 className="text-xl font-semibold text-primary mb-2 group-hover:text-primary/90 transition-colors">{project.title}</h3> {/* Increased font size, added margin */}
-                   <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{project.description}</p> {/* Added leading-relaxed */}
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-5">
-                        {project.tags.map((tag, index) => (
-                         <span key={index} className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium">
-                             {tag}
-                         </span>
-                        ))}
-                    </div>
-                 </div>
+                <div className="relative w-full md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
+                  <Image
+                    src={project.imageUrl}
+                    alt={`Project: ${project.title}`}
+                    fill={true}
+                    style={{ objectFit: 'cover' }}
+                    className="transition-transform duration-500 ease-in-out group-hover:scale-105"
+                  />
+                  {/* Subtle overlay on image hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
 
-                 <Button variant="outline" size="sm" asChild className="w-fit mt-auto group-hover:bg-accent transition-colors duration-200"> {/* Use outline, align button bottom */}
-                   <Link href={`#`} className="group/link"> {/* Replace # with actual project link */}
-                     View Project <ExternalLink className="ml-1.5 h-4 w-4 transition-transform duration-300 ease-in-out group-hover/link:translate-x-0.5" /> {/* Changed icon */}
-                   </Link>
-                 </Button>
-              </CardContent>
+                {/* Content container - takes 60% width on medium screens and up */}
+                <CardContent className="p-6 flex flex-col justify-between w-full md:w-3/5">
+  <div className="flex flex-col justify-between h-full"> {/* One parent wrapper */}
+    <div>
+      <h3 className="text-xl font-semibold text-primary mb-2 group-hover:text-primary/90 transition-colors">
+        {project.title}
+      </h3>
+      <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
+      <div className="flex flex-wrap gap-2 mb-5">
+        {project.tags.map((tag, index) => (
+          <span key={index} className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <Button variant="outline" size="sm" asChild className="w-fit mt-auto group-hover:bg-accent transition-colors duration-200">
+      <Link href={`#`} className="group/link">
+        <span>
+          View Project
+          <ExternalLink className="ml-1.5 h-4 w-4 inline-block transition-transform duration-300 ease-in-out group-hover/link:translate-x-0.5" />
+        </span>
+      </Link>
+    </Button>
+  </div>
+</CardContent>
+
             </Card>
           ))}
         </div>
-         {/* Optional: Add a button to view more projects */}
-         <div className="mt-12 text-center">
-            <Button size="lg" variant="outline" asChild className="transition-transform hover:scale-105">
-                <Link href="#">
-                    Explore More Projects <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-            </Button>
-         </div>
+        {/* Optional: Add a button to view more projects */}
+        <div className="mt-12 text-center">
+          <Button size="lg" variant="outline" asChild className="transition-transform hover:scale-105">
+            <Link href="#">
+              <span> {/* Wrap children in a single element */}
+                Explore More Projects <ArrowRight className="ml-2 h-5 w-5 inline-block" />
+              </span>
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
