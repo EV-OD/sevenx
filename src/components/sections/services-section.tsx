@@ -26,25 +26,26 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-background">
-       {/* Increased horizontal padding px-6 -> px-8, md:px-10 -> md:px-12, lg:px-16 */}
+    <section id="services" className="w-full py-16 md:py-24 lg:py-32 bg-background">
+      {/* Increased horizontal padding px-6 -> px-8, md:px-10 -> md:px-12, lg:px-16 */}
+      {/* Increased vertical padding py-12 -> py-16 */}
       <div className="container px-8 md:px-12 lg:px-16">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">Our Services</h2>
-          <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 md:mb-16"> {/* Increased bottom margin */}
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary font-heading">Our Services</h2> {/* Added font-heading */}
+          <p className="max-w-[700px] text-muted-foreground md:text-lg lg:text-xl"> {/* Adjusted text size */}
             We offer a comprehensive range of services to build and enhance your online presence.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"> {/* Increased gap */}
           {services.map((service, index) => (
-            <Card key={index} className="flex flex-col items-center text-center p-6 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg group">
-              <CardHeader className="p-0 mb-4">
-                 <div className="bg-primary text-primary-foreground rounded-full p-3 inline-flex mb-4 transition-colors duration-300 ease-in-out group-hover:bg-accent group-hover:text-accent-foreground">
-                   <service.icon className="h-8 w-8" />
+            <Card key={index} className="flex flex-col items-center text-center p-6 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl group border-border/80 hover:border-primary/30"> {/* Added border styling, increased shadow */}
+              <CardHeader className="p-0 mb-5"> {/* Increased margin bottom */}
+                 <div className="bg-primary text-primary-foreground rounded-full p-4 inline-flex mb-5 transition-all duration-300 ease-in-out group-hover:bg-primary/90 group-hover:scale-110 shadow-md"> {/* Increased padding, margin, added shadow, scale */}
+                   <service.icon className="h-9 w-9" /> {/* Increased icon size */}
                  </div>
-                <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
+                <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">{service.title}</CardTitle> {/* Added hover color */}
               </CardHeader>
-              <CardDescription className="text-muted-foreground">{service.description}</CardDescription>
+              <CardDescription className="text-muted-foreground leading-relaxed">{service.description}</CardDescription> {/* Added leading-relaxed */}
             </Card>
           ))}
         </div>
