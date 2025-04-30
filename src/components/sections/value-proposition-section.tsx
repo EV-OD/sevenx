@@ -20,23 +20,24 @@ const propositions = [
 
 export default function ValuePropositionSection() {
   return (
-    <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
+    <section id="about" className="w-full py-16 md:py-24 lg:py-32 bg-secondary">
+      {/* Increased vertical padding py-12 -> py-16 */}
       {/* Increased horizontal padding px-6 -> px-8, md:px-10 -> md:px-12, lg:px-16 */}
       <div className="container px-8 md:px-12 lg:px-16">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">Why Choose Us?</h2>
-          <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 md:mb-16"> {/* Increased bottom margin */}
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary font-heading">Why Choose Us?</h2> {/* Added font-heading */}
+          <p className="max-w-[700px] text-muted-foreground md:text-lg lg:text-xl"> {/* Adjusted text size */}
             Discover the advantages of partnering with ProResponsive for your web development needs.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8"> {/* Increased gap */}
           {propositions.map((prop, index) => (
-            <div key={index} className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg bg-background shadow-sm transition-shadow duration-300 ease-in-out hover:shadow-md">
-               <div className="bg-primary text-primary-foreground rounded-full p-3 inline-flex mb-3">
-                 <prop.icon className="h-7 w-7" />
+            <div key={index} className="flex flex-col items-center text-center space-y-4 p-8 rounded-lg bg-background shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 border border-transparent hover:border-primary/20"> {/* Increased padding, added translate-y, border effect */}
+               <div className="bg-primary text-primary-foreground rounded-full p-4 inline-flex mb-4 shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-110"> {/* Increased padding, margin, added shadow, scale */}
+                 <prop.icon className="h-8 w-8" /> {/* Increased icon size */}
                </div>
               <h3 className="text-xl font-semibold">{prop.title}</h3>
-              <p className="text-muted-foreground">{prop.description}</p>
+              <p className="text-muted-foreground leading-relaxed">{prop.description}</p> {/* Added leading-relaxed */}
             </div>
           ))}
         </div>
