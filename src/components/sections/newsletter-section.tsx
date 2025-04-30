@@ -59,7 +59,7 @@ export default function NewsletterSection() {
          {/* Use Card for better structure */}
         <Card className="max-w-2xl mx-auto shadow-lg border border-border/80 overflow-hidden">
            <CardHeader className="bg-primary/5 p-6 text-center"> {/* Added background tint */}
-             <div className="inline-block rounded-full bg-primary text-primary-foreground p-3 mb-4 shadow-md"> {/* Added shadow */}
+             <div className="inline w-min mx-auto rounded-full bg-primary text-primary-foreground p-3 mb-4 shadow-md"> {/* Added shadow */}
                <Mail className="h-7 w-7" />
              </div>
             <CardTitle className="text-2xl font-bold tracking-tight sm:text-3xl text-primary font-heading">Stay Connected</CardTitle> {/* Updated title */}

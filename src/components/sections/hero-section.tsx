@@ -62,7 +62,7 @@ const trustLogos = [
 ];
 
 // Tech stack badges
-const techBadges = ['Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'Responsive Design'];
+const techBadges = ['Fast', 'Styled', 'Animated', 'Typed', 'Mobile-Ready'];
 
 export default function HeroSection() {
   useDynamicCursor(); // Activate dynamic cursor for this section
@@ -118,16 +118,17 @@ export default function HeroSection() {
             animate={{ opacity: 1, scale: 1, y: 0 }} // Animate to this state
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }} // Animation timing
           >
-            Crafting Responsive Web Experiences
+            Innovation That 
+            Reshapes Industries
           </motion.h1>
-          <motion.p
+          {/* <motion.p
             className="max-w-[600px] text-muted-foreground md:text-xl lg:text-lg xl:text-xl mx-auto lg:mx-0" // Adjusted text size for better hierarchy
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
           >
             We build modern, accessible, and high-performing websites that look great on any device. Let us bring your vision to life.
-          </motion.p>
+          </motion.p> */}
 
            {/* Tech Stack Badges */}
            <motion.div
@@ -221,7 +222,7 @@ export default function HeroSection() {
       </div>
 
       {/* Trust Logos Section */}
-        <motion.div
+        {/* <motion.div
           className="container px-8 md:px-12 lg:px-16 mt-16 md:mt-24" // Added more top margin
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -233,7 +234,6 @@ export default function HeroSection() {
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
             {trustLogos.map((logo, index) => (
               <div key={index} className="h-6 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition duration-300 flex items-center justify-center">
-                 {/* Placeholder SVG - Replace with actual image tags or SVGs */}
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" height="24" className="fill-current">
                     <rect width="100" height="30" rx="3" fill="hsl(var(--muted))"/>
                     <text x="50" y="20" textAnchor="middle" fontSize="10" fill="hsl(var(--muted-foreground))">{logo.alt}</text>
@@ -243,7 +243,8 @@ export default function HeroSection() {
 
             ))}
           </div>
-        </motion.div>
+        </motion.div> 
+        */}
 
 
        {/* Scroll Down Indicator */}
