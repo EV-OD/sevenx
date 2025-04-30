@@ -42,8 +42,7 @@ export default function Header() {
       <div className="container flex h-16 items-center justify-between px-6 md:px-8 lg:px-10">
         {/* Logo on the left */}
         <Link href="/" className="flex items-center space-x-2 text-2xl font-bold text-primary transition-transform duration-300 ease-in-out hover:scale-105 mr-auto">
-          <BriefcaseBusiness className="h-6 w-6 text-primary" /> {/* Example icon, replace with your actual logo */}
-          <span>ProResponsive</span>
+                    <img src="/logos/icon.png" alt="SevenX Logo" className="h-12 w-auto" />          
         </Link>
 
         {/* Desktop Navigation */}
