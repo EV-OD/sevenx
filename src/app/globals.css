@@ -226,6 +226,7 @@ body {
     mix-blend-mode: difference; /* Apply blend mode to the fill */
     /* Transition multiple properties for smooth scaling and fade */
     transition: transform 0.15s ease-out, width 0.2s ease-out, height 0.2s ease-out, background-color 0.2s ease-out;
+    backdrop-filter: blur(2px); /* Add subtle backdrop blur */
   }
 
    /* Cursor scaling effect on hoverable elements (buttons, links) */

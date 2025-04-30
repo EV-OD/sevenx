@@ -192,7 +192,7 @@ export default function HeroSection() {
            }}
         > {/* Make image container relative for foreground elements */}
           <Image
-            src="/herotech.png"
+            src="https://picsum.photos/600/400?grayscale"
             width={600}
             height={400}
             alt="Hero Image - Responsive Design Showcase"
