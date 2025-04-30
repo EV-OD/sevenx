@@ -34,7 +34,7 @@ export default function Home() {
         <NewsletterSection />
       </main>
       <FooterSection />
-      <FloatingCTAButton /> {/* Add the floating CTA button */}
+      {/*<FloatingCTAButton />  Add the floating CTA button */}
     </div>
   );
 }
