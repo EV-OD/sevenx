@@ -196,6 +196,18 @@ body {
     background-size: 50px 50px, 50px 50px, 10px 10px; /* Grid lines, dots */
   }
 
+   /* Wavy background pattern */
+  .bg-wavy {
+    background-color: hsl(var(--background)); /* Ensure background color is set */
+    opacity: 1; /* Ensure opacity is 1 */
+    background-image:
+      radial-gradient(circle at 25px 25px, hsla(var(--primary)/0.05) 2%, transparent 0%),
+      radial-gradient(circle at 75px 75px, hsla(var(--primary)/0.05) 2%, transparent 0%);
+    background-size: 100px 100px;
+    background-position: 0 0;
+    position: relative; /* Needed for potential pseudo-elements */
+  }
+
   /* Styles for Dynamic Cursor */
   .cursor-dot {
     position: fixed;
