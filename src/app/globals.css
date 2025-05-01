@@ -229,6 +229,27 @@ body {
      background-position: 0 0, 10px 10px;
   }
 
+  /* Blueprint grid pattern */
+  .bg-blueprint-pattern {
+    background-color: hsl(var(--secondary));
+    opacity: 1;
+    /* Light blue grid lines on a slightly darker blue background */
+    background-image:
+      linear-gradient(hsl(206 52% 90% / 0.15) 1px, transparent 1px), /* Light blue vertical lines */
+      linear-gradient(to right, hsl(206 52% 90% / 0.15) 1px, transparent 1px); /* Light blue horizontal lines */
+    background-size: 40px 40px; /* Adjust grid size */
+    background-position: 0 0;
+  }
+  .dark .bg-blueprint-pattern {
+    background-color: hsl(var(--secondary)); /* Use secondary color for consistency */
+    background-image:
+      linear-gradient(hsl(206 52% 25% / 0.2) 1px, transparent 1px), /* Darker blue-ish vertical lines */
+      linear-gradient(to right, hsl(206 52% 25% / 0.2) 1px, transparent 1px); /* Darker blue-ish horizontal lines */
+    background-size: 40px 40px;
+    background-position: 0 0;
+  }
+
+
 
   /* Styles for Dynamic Cursor */
   .cursor-dot {
