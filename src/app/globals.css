@@ -250,6 +250,31 @@ body {
     background-position: 0 0;
   }
 
+    /* New Dotted Pattern for cards */
+  .bg-dotted-pattern {
+    background-color: transparent; /* Ensure it doesn't override card background */
+    position: relative;
+    overflow: hidden; /* Keep gradients contained */
+  }
+  .bg-dotted-pattern::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.3; /* Adjust opacity for subtlety */
+    background-image: radial-gradient(hsl(var(--primary-foreground)/0.1) 1px, transparent 1px);
+    background-size: 10px 10px; /* Adjust dot size and spacing */
+    background-position: center center;
+    pointer-events: none;
+    z-index: 0; /* Ensure it's behind content */
+  }
+  /* Optional: Dark mode variation for dotted pattern */
+  .dark .bg-dotted-pattern::before {
+     background-image: radial-gradient(hsl(var(--primary-foreground)/0.05) 1px, transparent 1px);
+     background-size: 12px 12px;
+     opacity: 0.2;
+  }
+
+
 
 
   /* Styles for Dynamic Cursor */
@@ -298,4 +323,5 @@ body {
   }
 
 }
+
 
