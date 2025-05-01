@@ -16,22 +16,22 @@ const projects = [
     id: 1,
     category: "Web Design",
     title: "AirCalling Landing Page Design",
-    imageUrl: "https://picsum.photos/400/300?random=12",
-    aiHint: "website landing page design"
+    imageUrl: "https://picsum.photos/400/300?random=12", // Kept original, relevant
+    aiHint: "website landing page design" // Relevant hint
   },
   {
     id: 2,
-    category: "Web Design",
-    title: "Business Landing Page Design",
-    imageUrl: "https://picsum.photos/400/300?random=13",
-    aiHint: "business website dashboard"
+    category: "UI/UX", // Changed category for variety
+    title: "Analytics Dashboard UI", // Changed title for variety
+    imageUrl: "https://picsum.photos/400/300?random=15", // Changed random seed
+    aiHint: "dashboard ui design analytics" // Updated hint
   },
   {
     id: 3,
-    category: "Web Design",
-    title: "Ecom Web Page Design",
-    imageUrl: "https://picsum.photos/400/300?random=14",
-    aiHint: "ecommerce product page"
+    category: "App Design", // Changed category for variety
+    title: "Mobile App Onboarding Screens", // Changed title for variety
+    imageUrl: "https://picsum.photos/400/300?random=16", // Changed random seed
+    aiHint: "mobile app interface onboarding" // Updated hint
   },
     // Add more projects if needed
 ];
@@ -103,10 +103,11 @@ export default function MyProjectsSection() {
                     visible: { opacity: 1, y: 0 }
                 }}
                  initial="hidden"
-                 animate="visible"
+                 whileInView="visible" // Trigger animation when in view
+                 viewport={{ once: true, amount: 0.3 }} // Adjust amount as needed
                  transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-border/50 bg-card h-full flex flex-col">
+              <Card className="overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-border/50 bg-card h-full flex flex-col group">
                 {/* Visual Preview Area */}
                 <div className="aspect-[16/10] w-full overflow-hidden relative">
                   <Image
@@ -117,6 +118,8 @@ export default function MyProjectsSection() {
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                     data-ai-hint={project.aiHint}
                   />
+                   {/* Optional: Add a subtle overlay on hover */}
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 {/* Card Content */}
                 <CardContent className="p-5 flex flex-col flex-grow">
@@ -127,6 +130,7 @@ export default function MyProjectsSection() {
                     {project.title}
                   </h3>
                   {/* Optional: Add a short description or link here */}
+                   {/* <p className="text-sm text-muted-foreground flex-grow mb-4">A brief description about this amazing project goes here.</p> */}
                    {/* <Button variant="link" size="sm" className="p-0 h-auto mt-auto self-start text-primary hover:underline">
                      View Details <ArrowRight className="ml-1 h-4 w-4" />
                    </Button> */}
