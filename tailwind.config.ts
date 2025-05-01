@@ -71,6 +71,9 @@ export default {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+      spacing: { // Add spacing for staggering effect
+        '8': '2rem', // Example: Add spacing value used for md:mt-8
+      },
   		keyframes: {
   			'accordion-down': {
   				from: {

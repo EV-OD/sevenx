@@ -1,44 +1,113 @@
-import { CheckCircle, Zap, Users } from 'lucide-react';
+// src/components/sections/value-proposition-section.tsx
+"use client"; // Required for framer-motion
+
+import { CheckCircle, Zap, Users, Award, Lightbulb, ShieldCheck } from 'lucide-react'; // Added more icons
+import { motion } from 'framer-motion';
+import { Badge } from '@/components/ui/badge'; // Import Badge
+import { cn } from '@/lib/utils';
 
 const propositions = [
   {
-    icon: CheckCircle,
+    icon: ShieldCheck, // Changed Icon
     title: 'Quality Focused',
-    description: 'We prioritize high-quality code and design standards for robust and maintainable websites.',
+    description: 'Prioritizing high-quality code and design standards for robust, maintainable, and scalable websites.',
+    badge: 'Core Value',
+    delay: 0.1,
+    yOffset: 0, // No vertical offset for the first card
   },
   {
     icon: Zap,
     title: 'Performance Optimized',
-    description: 'Our websites are built for speed and performance, ensuring fast load times and smooth interactions.',
+    description: 'Building for speed and performance, ensuring fast load times and smooth, engaging user interactions.',
+    badge: 'Our Ethos',
+    delay: 0.2,
+    yOffset: 8, // Stagger middle card down slightly
   },
   {
-    icon: Users,
+    icon: Lightbulb, // Changed Icon
     title: 'Client Collaboration',
-    description: 'We work closely with you throughout the process to ensure the final product meets your vision.',
+    description: 'Working closely with you throughout the process, ensuring the final product perfectly meets your vision.',
+    badge: 'Commitment',
+    delay: 0.3,
+    yOffset: 0, // No vertical offset for the last card
   },
 ];
 
 export default function ValuePropositionSection() {
   return (
-    <section id="about" className="w-full py-16 md:py-24 lg:py-32 bg-secondary">
-      {/* Increased vertical padding py-12 -> py-16 */}
-      {/* Increased horizontal padding px-6 -> px-8, md:px-10 -> md:px-12, lg:px-16 */}
-      <div className="container px-8 md:px-12 lg:px-16">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 md:mb-16"> {/* Increased bottom margin */}
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary font-heading">Why Choose Us?</h2> {/* Added font-heading */}
-          <p className="max-w-[700px] text-muted-foreground md:text-lg lg:text-xl"> {/* Adjusted text size */}
+    <section
+      id="about"
+      // Added new background pattern class, adjust padding
+      className={cn(
+        "relative w-full py-20 md:py-28 lg:py-36 bg-secondary overflow-hidden", // Increased vertical padding
+        "bg-circuit-pattern" // Apply new circuit pattern background
+      )}
+    >
+      {/* Optional: Decorative accent lines/shapes */}
+      <div className="absolute inset-0 -z-10 opacity-10 overflow-hidden" aria-hidden="true">
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary rounded-full filter blur-3xl animate-subtle-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent rounded-full filter blur-3xl animate-subtle-pulse animation-delay-400"></div>
+      </div>
+
+      <div className="container px-8 md:px-12 lg:px-16 relative z-10">
+        {/* Header Section */}
+        <motion.div
+          className="flex flex-col items-center justify-center space-y-4 text-center mb-16 md:mb-20" // Increased bottom margin
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary font-heading">
+            Why Choose Us?
+          </h2>
+          <p className="max-w-[750px] text-muted-foreground md:text-lg lg:text-xl">
             Discover the advantages of partnering with ProResponsive for your web development needs.
           </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8"> {/* Increased gap */}
+        </motion.div>
+
+        {/* Cards Section - Using Grid with adjusted vertical alignment/padding for stagger effect */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 items-start">
           {propositions.map((prop, index) => (
-            <div key={index} className="flex flex-col items-center text-center space-y-4 p-8 rounded-lg bg-background shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 border border-transparent hover:border-primary/20"> {/* Increased padding, added translate-y, border effect */}
-               <div className="bg-primary text-primary-foreground rounded-full p-4 inline-flex mb-4 shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-110"> {/* Increased padding, margin, added shadow, scale */}
-                 <prop.icon className="h-8 w-8" /> {/* Increased icon size */}
-               </div>
-              <h3 className="text-xl font-semibold">{prop.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{prop.description}</p> {/* Added leading-relaxed */}
-            </div>
+            <motion.div
+              key={index}
+              // Apply staggering using md:mt-[offset]
+              className={cn(
+                "relative group flex flex-col items-center text-center p-8 rounded-xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl border border-border/20 hover:border-primary/30",
+                // Frosted Glass Effect: semi-transparent background + backdrop blur
+                "bg-card/80 dark:bg-card/60 backdrop-blur-lg supports-[backdrop-filter]:bg-card/70 supports-[backdrop-filter]:dark:bg-card/50",
+                // Staggering effect on medium screens and up
+                `md:mt-${prop.yOffset}`
+              )}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: prop.delay }}
+              whileHover={{ y: -8 }} // Lift card on hover
+            >
+              {/* Corner Badge */}
+              <Badge
+                variant="secondary"
+                className="absolute top-3 right-3 -rotate-12 text-xs px-2 py-0.5 opacity-70 group-hover:opacity-100 transition-opacity"
+              >
+                {prop.badge}
+              </Badge>
+
+              {/* Animated Icon */}
+              <motion.div
+                className="bg-primary text-primary-foreground rounded-full p-4 inline-flex mb-5 shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-110"
+                whileHover={{ rotate: [0, 10, -10, 0], scale: 1.15 }}
+                transition={{ duration: 0.4 }}
+              >
+                <prop.icon className="h-8 w-8" />
+              </motion.div>
+
+              {/* Contrasting Typography */}
+              <h3 className="text-2xl font-bold font-heading mb-3 text-primary group-hover:text-primary/90 transition-colors">
+                {prop.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed font-light text-base flex-grow"> {/* Lighter, slightly larger body text */}
+                {prop.description}
+              </p>
+            </motion.div>
           ))}
         </div>
       </div>

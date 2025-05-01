@@ -208,6 +208,28 @@ body {
     position: relative; /* Needed for potential pseudo-elements */
   }
 
+  /* Circuit background pattern */
+  .bg-circuit-pattern {
+    background-color: hsl(var(--secondary));
+    opacity: 1;
+    /* Repeating circuit-like lines */
+    background-image:
+      linear-gradient(45deg, hsla(var(--border)/0.4) 1px, transparent 1px),
+      linear-gradient(-45deg, hsla(var(--border)/0.4) 1px, transparent 1px);
+    background-size: 20px 20px; /* Adjust size of the pattern */
+    background-position: 0 0, 10px 10px; /* Offset the second set of lines */
+    position: relative;
+  }
+  .dark .bg-circuit-pattern {
+     background-color: hsl(var(--secondary));
+     background-image:
+      linear-gradient(45deg, hsla(var(--border)/0.2) 1px, transparent 1px),
+      linear-gradient(-45deg, hsla(var(--border)/0.2) 1px, transparent 1px);
+     background-size: 20px 20px;
+     background-position: 0 0, 10px 10px;
+  }
+
+
   /* Styles for Dynamic Cursor */
   .cursor-dot {
     position: fixed;
