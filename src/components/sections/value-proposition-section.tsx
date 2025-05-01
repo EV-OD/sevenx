@@ -1,7 +1,7 @@
 // src/components/sections/value-proposition-section.tsx
 "use client"; // Required for framer-motion
 
-import { CheckCircle, Zap, Users, Award, Lightbulb, ShieldCheck } from 'lucide-react'; // Added more icons
+import { ShieldCheck, Zap, Lightbulb } from 'lucide-react'; // Updated Icons
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge'; // Import Badge
 import { cn } from '@/lib/utils';
@@ -37,13 +37,13 @@ export default function ValuePropositionSection() {
   return (
     <section
       id="about"
-      // Added new background pattern class, adjust padding
+      // Apply grid/dot pattern instead of circuit pattern
       className={cn(
         "relative w-full py-20 md:py-28 lg:py-36 bg-secondary overflow-hidden", // Increased vertical padding
-        "bg-circuit-pattern" // Apply new circuit pattern background
+        "bg-pattern-light dark:bg-pattern-dark" // Apply grid/dot pattern
       )}
     >
-      {/* Optional: Decorative accent lines/shapes */}
+      {/* Optional: Decorative accent lines/shapes - Keeping these for depth */}
       <div className="absolute inset-0 -z-10 opacity-10 overflow-hidden" aria-hidden="true">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary rounded-full filter blur-3xl animate-subtle-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent rounded-full filter blur-3xl animate-subtle-pulse animation-delay-400"></div>
