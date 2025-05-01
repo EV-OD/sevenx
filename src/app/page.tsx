@@ -4,13 +4,13 @@ import HeroSection from '@/components/sections/hero-section';
 import ServicesSection from '@/components/sections/services-section';
 import ValuePropositionSection from '@/components/sections/value-proposition-section';
 // import VisionGoalSection from '@/components/sections/vision-goal-section'; // Removed import
-import ProjectsSection from '@/components/sections/projects-section';
+import MyProjectsSection from '@/components/sections/my-projects-section'; // Import the new MyProjectsSection
 import TestimonialsSection from '@/components/sections/testimonials-section';
 import TeamSection from '@/components/sections/team-section';
 import NewsletterSection from '@/components/sections/newsletter-section';
 import FooterSection from '@/components/sections/footer-section';
 import Header from '@/components/layout/header';
-import FloatingCTAButton from '@/components/layout/floating-cta-button'; // Import the new component
+// import FloatingCTAButton from '@/components/layout/floating-cta-button'; // Import the new component // Commented out Floating CTA
 
 export const metadata: Metadata = {
   title: 'ProResponsive - Professional & Responsive Web Design',
@@ -28,7 +28,7 @@ export default function Home() {
         <ServicesSection />
         <ValuePropositionSection />
         {/* <VisionGoalSection /> Removed component usage */}
-        <ProjectsSection />
+        <MyProjectsSection /> {/* Use the new MyProjectsSection */}
         <TestimonialsSection />
         <TeamSection />
         <NewsletterSection />
@@ -38,3 +38,4 @@ export default function Home() {
     </div>
   );
 }
+
