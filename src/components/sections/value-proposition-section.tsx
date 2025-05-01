@@ -73,10 +73,8 @@ export default function ValuePropositionSection() {
               key={index}
               // Apply flex flex-col h-full to make cards fill grid cell height
               className={cn(
-                "relative group flex flex-col h-full items-center text-center p-8 rounded-t-2xl rounded-b-lg shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl border border-border/20 hover:border-primary-foreground/40 overflow-hidden", // Added overflow-hidden
-                // Make background solid primary color instead of slightly transparent
-                "bg-primary",
-                 "bg-dotted-pattern" // Apply the dotted pattern to the card itself
+                "relative group flex flex-col h-full items-center text-center p-8 rounded-t-2xl rounded-b-lg shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl border border-border/20 hover:border-primary/40 overflow-hidden", // Added overflow-hidden, adjusted hover border
+                "bg-primary" // Reverted to solid primary background
               )}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }} // Trigger animation when in view
@@ -84,9 +82,7 @@ export default function ValuePropositionSection() {
               viewport={{ once: true, amount: 0.3 }} // Adjust amount as needed
               whileHover={{ y: -8 }} // Lift card on hover
             >
-              {/* Light Ray Gradient Overlay - Positioned absolutely within the card */}
-              <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,hsla(0,0%,100%,0.15)_0%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" aria-hidden="true"></div>
-               {/* Content container relative to ensure it's above the gradient and dotted pattern */}
+              {/* Content container relative to ensure it's above the background */}
                <div className="relative z-10 flex flex-col items-center h-full">
                  {/* Corner Badge */}
                  <Badge
