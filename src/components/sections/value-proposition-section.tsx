@@ -72,10 +72,9 @@ export default function ValuePropositionSection() {
               key={index}
               // Apply flex flex-col h-full to make cards fill grid cell height
               className={cn(
-                "relative group flex flex-col h-full items-center text-center p-8 rounded-t-2xl rounded-b-lg shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl border border-border/20 hover:border-primary/30", // Unique border radius
-                // Dark Sky Wave Gradient
-                "bg-gradient-to-br from-primary/80 via-background to-secondary/50 dark:from-primary/60 dark:via-background dark:to-secondary/30",
-                // Removed staggering effect `md:mt-${prop.yOffset}`
+                "relative group flex flex-col h-full items-center text-center p-8 rounded-t-2xl rounded-b-lg shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl border border-border/20 hover:border-sky-300/50 dark:hover:border-sky-700/50", // Unique border radius, updated hover border
+                // Sky Blue Wave Gradient
+                "bg-gradient-to-br from-sky-400/70 via-sky-100/60 to-sky-200/50 dark:from-sky-700/60 dark:via-sky-950/80 dark:to-sky-800/40",
               )}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -84,29 +83,30 @@ export default function ValuePropositionSection() {
             >
               {/* Corner Badge */}
               <Badge
-                variant="secondary"
-                className="absolute top-3 right-3 -rotate-12 text-xs px-2 py-0.5 opacity-70 group-hover:opacity-100 transition-opacity bg-background/50 text-foreground/80" // Adjusted badge style for contrast
+                variant="secondary" // Using secondary might work okay with the new background, or customize
+                className="absolute top-3 right-3 -rotate-12 text-xs px-2 py-0.5 opacity-70 group-hover:opacity-100 transition-opacity bg-white/40 text-sky-900 dark:bg-sky-950/40 dark:text-sky-200" // Adjusted badge style for sky blue
               >
                 {prop.badge}
               </Badge>
 
               {/* Animated Icon */}
               <motion.div
-                className="bg-primary/20 text-primary-foreground rounded-full p-4 inline-flex mb-5 shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:bg-primary/30" // Adjusted icon background for gradient
+                className={cn(
+                  "rounded-full p-4 inline-flex mb-5 shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-110",
+                  "bg-sky-100/80 dark:bg-sky-900/50 group-hover:bg-sky-200/90 dark:group-hover:bg-sky-800/60" // Sky blue background for icon circle
+                )}
                 whileHover={{ rotate: [0, 10, -10, 0], scale: 1.15 }}
                 transition={{ duration: 0.4 }}
               >
-                <prop.icon className="h-8 w-8" />
+                <prop.icon className="h-8 w-8 text-sky-600 dark:text-sky-300" /> {/* Adjusted icon color */}
               </motion.div>
 
               {/* Contrasting Typography */}
-              {/* Changed text-primary to text-card-foreground for better contrast */}
-              <h3 className="text-2xl font-bold font-heading mb-3 text-card-foreground group-hover:text-card-foreground/90 transition-colors">
+              <h3 className="text-2xl font-bold font-heading mb-3 text-sky-950 dark:text-sky-50 group-hover:text-sky-950/90 dark:group-hover:text-sky-100/90 transition-colors"> {/* Sky blue heading */}
                 {prop.title}
               </h3>
               {/* Added flex-grow to make description push content below it down */}
-              {/* Changed text-muted-foreground to text-card-foreground/80 */}
-              <p className="text-card-foreground/80 leading-relaxed font-light text-base flex-grow">
+              <p className="text-sky-800 dark:text-sky-300 leading-relaxed font-light text-base flex-grow"> {/* Sky blue description */}
                 {prop.description}
               </p>
             </motion.div>
