@@ -74,8 +74,8 @@ export default function ValuePropositionSection() {
               // Apply flex flex-col h-full to make cards fill grid cell height
               className={cn(
                 "relative group flex flex-col h-full items-center text-center p-8 rounded-t-2xl rounded-b-lg shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl border border-border/20 hover:border-primary-foreground/40 overflow-hidden", // Added overflow-hidden
-                // Ensure dark blue background is applied and visible
-                "bg-primary/90 dark:bg-primary/80",
+                // Make background solid primary color instead of slightly transparent
+                "bg-primary",
                  "bg-dotted-pattern" // Apply the dotted pattern to the card itself
               )}
               initial={{ opacity: 0, y: 20 }}
