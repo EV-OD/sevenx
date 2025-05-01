@@ -61,9 +61,11 @@ CardDescription.displayName = "CardDescription"
 const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  // Removed the unnecessary fragment <></>
-  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+>(({ className, children, ...props }, ref) => ( // Added children prop
+  // Use standard div with children inside
+  <div ref={ref} className={cn("p-6 pt-0", className)} {...props}>
+    {children}
+  </div>
 ))
 CardContent.displayName = "CardContent"
 
