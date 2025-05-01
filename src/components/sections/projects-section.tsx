@@ -154,10 +154,10 @@ export default function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.15 }} // Slightly increased delay
               viewport={{ once: true, amount: 0.2 }} // Trigger animation when 20% is visible
-              // Apply staggered vertical translation for visual interest on larger screens
+              // Removed manual staggering (lg:mt-12)
               className={cn(
-                  "mb-8 lg:mb-0",
-                  index % 2 !== 0 && "lg:mt-12" // Add top margin to odd-indexed items on large screens
+                  "mb-8 lg:mb-0"
+                  // index % 2 !== 0 && "lg:mt-12" // Removed this line
               )}
             >
               {/* Removed max-w-sm mx-auto to allow cards to fill grid columns */}
