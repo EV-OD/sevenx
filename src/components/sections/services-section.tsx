@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge'; // Import Badge
 import { Laptop, Smartphone, Palette, Code, ArrowRight } from 'lucide-react'; // Added ArrowRight
+import { cn } from '@/lib/utils'; // Import cn
 
 const services = [
   {
@@ -34,7 +35,14 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="w-full py-16 md:py-24 lg:py-32 bg-background">
+    <section
+      id="services"
+      // Apply the wavy background class
+      className={cn(
+        "w-full py-16 md:py-24 lg:py-32 bg-background",
+        "bg-wavy" // Added wavy background
+      )}
+    >
       {/* Consistent padding with other sections */}
       <div className="container px-8 md:px-12 lg:px-16">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 md:mb-16">
