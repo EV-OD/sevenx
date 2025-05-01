@@ -252,22 +252,24 @@ body {
 
     /* New Dotted Pattern for cards */
   .bg-dotted-pattern {
-    background-color: transparent; /* Ensure it doesn't override card background */
+    /* Ensure it doesn't override card background initially */
     position: relative;
     overflow: hidden; /* Keep gradients contained */
   }
+  /* Apply the pattern using ::before to sit on top of the card background */
   .bg-dotted-pattern::before {
     content: "";
     position: absolute;
     inset: 0;
-    opacity: 0.3; /* Adjust opacity for subtlety */
+    opacity: 0.3; /* Adjust opacity for desired visibility */
+    /* Lighter dots for dark backgrounds, darker dots for light backgrounds */
     background-image: radial-gradient(hsl(var(--primary-foreground)/0.1) 1px, transparent 1px);
     background-size: 10px 10px; /* Adjust dot size and spacing */
     background-position: center center;
-    pointer-events: none;
-    z-index: 0; /* Ensure it's behind content */
+    pointer-events: none; /* Don't interfere with interaction */
+    z-index: 1; /* Sit just above the background, below content */
   }
-  /* Optional: Dark mode variation for dotted pattern */
+  /* Adjust dark mode dots for better contrast */
   .dark .bg-dotted-pattern::before {
      background-image: radial-gradient(hsl(var(--primary-foreground)/0.05) 1px, transparent 1px);
      background-size: 12px 12px;
@@ -323,5 +325,6 @@ body {
   }
 
 }
+
 
 
