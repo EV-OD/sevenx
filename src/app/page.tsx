@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import HeroSection from '@/components/sections/hero-section';
 import ServicesSection from '@/components/sections/services-section';
 import ValuePropositionSection from '@/components/sections/value-proposition-section';
-import VisionGoalSection from '@/components/sections/vision-goal-section';
+// import VisionGoalSection from '@/components/sections/vision-goal-section'; // Removed import
 import ProjectsSection from '@/components/sections/projects-section';
 import TestimonialsSection from '@/components/sections/testimonials-section';
 import TeamSection from '@/components/sections/team-section';
@@ -27,7 +27,7 @@ export default function Home() {
         <HeroSection />
         <ServicesSection />
         <ValuePropositionSection />
-        <VisionGoalSection />
+        {/* <VisionGoalSection /> Removed component usage */}
         <ProjectsSection />
         <TestimonialsSection />
         <TeamSection />
