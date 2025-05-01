@@ -73,9 +73,10 @@ export default function ValuePropositionSection() {
               key={index}
               // Apply flex flex-col h-full to make cards fill grid cell height
               className={cn(
-                "relative group flex flex-col h-full items-center text-center p-8 rounded-t-2xl rounded-b-lg shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl border border-border/20 hover:border-primary-foreground/40", // Unique border radius, updated hover border
+                "relative group flex flex-col h-full items-center text-center p-8 rounded-t-2xl rounded-b-lg shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl border border-border/20 hover:border-primary-foreground/40 overflow-hidden", // Added overflow-hidden
                 // Dark Blue Background (using primary color)
                 "bg-primary/90 dark:bg-primary/80",
+                 "bg-dotted-pattern" // Apply the dotted pattern
               )}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }} // Trigger animation when in view
@@ -83,45 +84,50 @@ export default function ValuePropositionSection() {
               viewport={{ once: true, amount: 0.3 }} // Adjust amount as needed
               whileHover={{ y: -8 }} // Lift card on hover
             >
-              {/* Corner Badge */}
-              <Badge
-                variant="secondary" // Using secondary might work okay with the new background, or customize
-                className={cn(
-                    "absolute top-3 right-3 -rotate-12 text-xs px-2 py-0.5 opacity-70 group-hover:opacity-100 transition-opacity",
-                    "bg-primary-foreground/10 text-primary-foreground/90" // Adjusted badge style for contrast
-                )}
-              >
-                {prop.badge}
-              </Badge>
+              {/* Light Ray Gradient Overlay */}
+              <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,hsla(0,0%,100%,0.15)_0%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true"></div>
+               {/* Content container relative to ensure it's above the gradient and dotted pattern */}
+               <div className="relative z-10 flex flex-col items-center h-full">
+                 {/* Corner Badge */}
+                 <Badge
+                   variant="secondary" // Using secondary might work okay with the new background, or customize
+                   className={cn(
+                       "absolute top-3 right-3 -rotate-12 text-xs px-2 py-0.5 opacity-70 group-hover:opacity-100 transition-opacity",
+                       "bg-primary-foreground/10 text-primary-foreground/90" // Adjusted badge style for contrast
+                   )}
+                 >
+                   {prop.badge}
+                 </Badge>
 
-              {/* Animated Icon */}
-              <motion.div
-                className={cn(
-                  "rounded-full p-4 inline-flex mb-5 shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-110",
-                  // Adjusted icon background for contrast
-                  "bg-primary-foreground/10 group-hover:bg-primary-foreground/20"
-                )}
-                whileHover={{ rotate: [0, 10, -10, 0], scale: 1.15 }}
-                transition={{ duration: 0.4 }}
-              >
-                {/* Adjusted icon color for contrast */}
-                <prop.icon className="h-8 w-8 text-primary-foreground" />
-              </motion.div>
+                 {/* Animated Icon */}
+                 <motion.div
+                   className={cn(
+                     "rounded-full p-4 inline-flex mb-5 shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-110",
+                     // Adjusted icon background for contrast
+                     "bg-primary-foreground/10 group-hover:bg-primary-foreground/20"
+                   )}
+                   whileHover={{ rotate: [0, 10, -10, 0], scale: 1.15 }}
+                   transition={{ duration: 0.4 }}
+                 >
+                   {/* Adjusted icon color for contrast */}
+                   <prop.icon className="h-8 w-8 text-primary-foreground" />
+                 </motion.div>
 
-              {/* Contrasting Typography */}
-              <h3 className={cn(
-                "text-2xl font-bold font-heading mb-3 transition-colors",
-                "text-primary-foreground group-hover:text-primary-foreground/90" // Heading color for contrast
-              )}>
-                {prop.title}
-              </h3>
-              {/* Added flex-grow to make description push content below it down */}
-              <p className={cn(
-                "leading-relaxed font-light text-base flex-grow",
-                 "text-primary-foreground/80" // Description color for contrast
-              )}>
-                {prop.description}
-              </p>
+                 {/* Contrasting Typography */}
+                 <h3 className={cn(
+                   "text-2xl font-bold font-heading mb-3 transition-colors",
+                   "text-primary-foreground group-hover:text-primary-foreground/90" // Heading color for contrast
+                 )}>
+                   {prop.title}
+                 </h3>
+                 {/* Added flex-grow to make description push content below it down */}
+                 <p className={cn(
+                   "leading-relaxed font-light text-base flex-grow",
+                    "text-primary-foreground/80" // Description color for contrast
+                 )}>
+                   {prop.description}
+                 </p>
+               </div>
             </motion.div>
           ))}
         </div>
