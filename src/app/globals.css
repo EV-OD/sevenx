@@ -84,12 +84,7 @@ body {
     @apply border-border;
   }
   body {
-    width: 100vw;
-    height: 300vh;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: repeat;
-    background-image: url(/long-back.png);
+
     @apply bg-background text-foreground;
     /* Remove default cursor when dynamic cursor is active */
     &.dynamic-cursor-active {
@@ -144,6 +139,34 @@ body {
         animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
       }
     }
+}
+
+@media screen and (min-width: 640px) {
+  /* Add custom styles for larger screens */
+body{
+  width: 100vw;
+  height: 300vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url(/long-back.png);
+}
+  
+}
+
+@media screen and (max-width: 640px) {
+  /* Add custom styles for larger screens */
+
+  .bg-pattern-light {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-image: url(/back2.svg);
+
+    
+  }
 }
 
 /* Move animation utility classes to @layer utilities */

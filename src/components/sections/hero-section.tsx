@@ -72,7 +72,7 @@ export default function HeroSection() {
     <section
       id="home"
       className={cn(
-        "relative w-full py-16 md:py-24 lg:py-32 bg-secondary overflow-hidden", // Reduced top padding (py-20 -> py-16, etc.)
+        "relative w-full py-16 pt-36 md:py-24 lg:py-32 bg-secondary overflow-hidden", // Reduced top padding (py-20 -> py-16, etc.)
         "bg-pattern-light dark:bg-pattern-dark" // Keep the dot/grid pattern
       )}
     >
