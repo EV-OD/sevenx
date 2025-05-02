@@ -10,6 +10,7 @@ import TeamSection from '@/components/sections/team-section';
 import NewsletterSection from '@/components/sections/newsletter-section';
 import FooterSection from '@/components/sections/footer-section';
 import Header from '@/components/layout/header';
+import BlurryCursor from '@/components/cursor';
 // import FloatingCTAButton from '@/components/layout/floating-cta-button'; // Import the new component // Commented out Floating CTA
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function Home() {
       <Header />
       {/* Removed pt-4 and md:pt-8 for less top padding */}
       <main className="flex-grow pb-8 md:pb-16">
-        <HeroSection />
+        <HeroSection/>
         <ServicesSection />
         <ValuePropositionSection />
         {/* <VisionGoalSection /> Removed component usage */}
@@ -34,6 +35,9 @@ export default function Home() {
         <NewsletterSection />
       </main>
       <FooterSection />
+      <BlurryCursor isActive={false}/>
+
+
       {/*<FloatingCTAButton />  Add the floating CTA button */}
     </div>
   );

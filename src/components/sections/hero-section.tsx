@@ -9,6 +9,7 @@ import { motion } from 'framer-motion'; // Import motion
 import { Code, BarChart, BriefcaseBusiness, Settings, Network, Layers, Target, TrendingUp, Activity, Puzzle, ArrowDown } from 'lucide-react'; // Replaced Briefcase with BriefcaseBusiness
 import { Badge } from '@/components/ui/badge'; // Import Badge component
 import { useDynamicCursor } from '@/hooks/use-dynamic-cursor'; // Import the cursor hook
+import Globe from '../globe';
 
 
 // Define floating BACKGROUND elements (icons, simple shapes, blobs, gradients)
@@ -108,12 +109,12 @@ export default function HeroSection() {
       {/* Main content container */}
       {/* Increased horizontal padding px-6 -> px-8, md:px-10 -> md:px-12, lg:px-16 */}
       {/* Grid layout ensures text is first on mobile, image is second */}
-      <div className="container px-8 md:px-12 lg:px-16 grid gap-8 lg:grid-cols-2 lg:gap-16 items-center relative z-10">
+      <div className="container px-8 md:px-12 lg:px-16 grid gap-8 lg:grid-cols-2 lg:gap-16 items-center relative z-10 -mt-16">
         {/* Text Content - Order 1 on all screens by default */}
         <div className="space-y-6 text-center lg:text-left lg:order-1"> {/* Increased space-y, ensure text is first on lg */}
            {/* Apply font, gradient, and animation */}
           <motion.h1
-            className="font-heading text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400" // Increased font size
+            className="font-heading text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-clip-text text-[#173446]" // Increased font size
             initial={{ opacity: 0, scale: 0.95, y: 10 }} // Initial animation state
             animate={{ opacity: 1, scale: 1, y: 0 }} // Animate to this state
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }} // Animation timing
@@ -192,14 +193,15 @@ export default function HeroSection() {
              }
            }}
         > {/* Make image container relative for foreground elements */}
-          <Image
+          {/* <Image
             src="/herotech.png"
             width={600}
             height={400}
             alt="Hero Image - Responsive Design Showcase"
             className="mx-auto aspect-[3/2] overflow-hidden rounded-xl object-contain sm:w-full transition-transform duration-500 ease-in-out hover:scale-105 border border-border/10" // Added subtle border
             priority
-          />
+          /> */}
+          <Globe/>
           {/* Floating FOREGROUND elements positioned relative to the image container */}
            {floatingForegroundElements.map((el, index) => (
              el.icon ? (
