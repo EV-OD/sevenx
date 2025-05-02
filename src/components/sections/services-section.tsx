@@ -39,8 +39,7 @@ export default function ServicesSection() {
       id="services"
       // Apply the wavy background class
       className={cn(
-        "w-full py-16 md:py-24 lg:py-32 bg-background",
-        "bg-wavy" // Added wavy background
+        "w-full py-16 md:py-24 lg:py-32",
       )}
     >
       {/* Consistent padding with other sections */}
