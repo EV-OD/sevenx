@@ -77,7 +77,7 @@ export default function HeroSection() {
       )}
     >
        {/* Floating BACKGROUND elements container */}
-      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
+      {/* <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
         {floatingHeroElements.map((el, index) => (
           el.icon ? (
             <el.icon
@@ -104,7 +104,7 @@ export default function HeroSection() {
             />
           )
         ))}
-      </div>
+      </div> */}
 
       {/* Main content container */}
       {/* Increased horizontal padding px-6 -> px-8, md:px-10 -> md:px-12, lg:px-16 */}
