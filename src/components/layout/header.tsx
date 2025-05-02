@@ -42,7 +42,7 @@ export default function Header() {
       <div className="container flex h-16 items-center justify-between px-6 md:px-8 lg:px-10">
         {/* Logo on the left */}
         <Link href="/" className="flex items-center space-x-2 text-2xl font-bold text-primary transition-transform duration-300 ease-in-out hover:scale-105 mr-auto">
-                    <img src="/logos/icon.png" alt="SevenX Logo" className="h-12 w-auto" />          
+                    <img src="/logos/icon.png" alt="SevenX Logo" className="h-[50px] w-auto" />          
         </Link>
 
         {/* Desktop Navigation */}

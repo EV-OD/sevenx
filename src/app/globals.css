@@ -183,11 +183,18 @@ body {
 
   /* Add background pattern utilities */
   .bg-pattern-light {
-    background-image:
+    /* background-image:
       linear-gradient(to right, hsla(var(--border)/0.5) 1px, transparent 1px),
       linear-gradient(to bottom, hsla(var(--border)/0.5) 1px, transparent 1px),
       radial-gradient(hsla(var(--border)/0.8) 0.5px, transparent 0.5px);
-    background-size: 50px 50px, 50px 50px, 10px 10px; /* Grid lines, dots */
+    background-size: 50px 50px, 50px 50px, 10px 10px; */
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: repeat;
+      background-image: url(/back2.svg);
+    
   }
   .dark .bg-pattern-dark {
     background-image:
