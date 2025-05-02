@@ -39,7 +39,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       {/* Apply both font variables to the body */}
       <body className={`${geistSans.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
-        <DynamicCursor /> {/* Add the dynamic cursor component */}
+      {/*<DynamicCursor />  Add the dynamic cursor component */}
         {children}
         <Toaster />
       </body>

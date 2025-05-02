@@ -11,7 +11,7 @@ export default function FooterSection() {
             <div className="flex flex-col items-center md:items-start space-y-3">
                  <Link href="/" className="flex items-center space-x-2 text-xl font-bold transition-opacity hover:opacity-90">
                    <BriefcaseBusiness className="h-6 w-6" />
-                   <span>ProResponsive</span>
+                   <span>SevenX Innovations Pvt. Ltd.</span>
                  </Link>
                 <p className="text-sm text-primary-foreground/80">&copy; {new Date().getFullYear()} ProResponsive. All rights reserved.</p>
             </div>

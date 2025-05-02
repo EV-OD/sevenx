@@ -84,6 +84,12 @@ body {
     @apply border-border;
   }
   body {
+    width: 100vw;
+    height: 300vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    background-image: url(/long-back.png);
     @apply bg-background text-foreground;
     /* Remove default cursor when dynamic cursor is active */
     &.dynamic-cursor-active {
@@ -188,12 +194,7 @@ body {
       linear-gradient(to bottom, hsla(var(--border)/0.5) 1px, transparent 1px),
       radial-gradient(hsla(var(--border)/0.8) 0.5px, transparent 0.5px);
     background-size: 50px 50px, 50px 50px, 10px 10px; */
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: repeat;
-      background-image: url(/back2.svg);
+
     
   }
   .dark .bg-pattern-dark {
@@ -202,6 +203,15 @@ body {
       linear-gradient(to bottom, hsla(var(--border)/0.3) 1px, transparent 1px),
       radial-gradient(hsla(var(--border)/0.4) 0.5px, transparent 0.5px);
     background-size: 50px 50px, 50px 50px, 10px 10px; /* Grid lines, dots */
+  }
+
+  .bg-service{
+    /* width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    background-image: url(/back-flip.png); */
   }
 
    /* Wavy background pattern */

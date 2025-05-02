@@ -35,7 +35,7 @@ export default function Home() {
         <NewsletterSection />
       </main>
       <FooterSection />
-      <BlurryCursor isActive={false}/>
+      {/* <BlurryCursor isActive={false}/> */}
 
 
       {/*<FloatingCTAButton />  Add the floating CTA button */}
