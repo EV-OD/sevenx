@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 30" width="120" height="30">
-  <rect width="120" height="30" rx="5" fill="#E5E7EB"/> <!-- Light gray background -->
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6B7280"> <!-- Gray text -->
-    Brand A
-  </text>
-</svg>

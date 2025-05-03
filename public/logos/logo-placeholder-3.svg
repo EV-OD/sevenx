@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 30" width="110" height="30">
-  <rect width="110" height="30" rx="5" fill="#E5E7EB"/>
-  <path d="M10 10 L20 20 L10 20 Z" fill="#6B7280"/> <!-- Triangle -->
-  <path d="M25 10 L35 10 L30 20 Z" fill="#9CA3AF"/> <!-- Another triangle -->
-  <text x="70%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#374151">
-    Company C
-  </text>
-</svg>
