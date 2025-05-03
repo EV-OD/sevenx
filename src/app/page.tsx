@@ -24,7 +24,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Header />
       {/* Removed pt-4 and md:pt-8 for less top padding */}
-      <main className="flex-grow pb-8 md:pb-16">
+      <main className="flex-grow pb-8 md:pb-16 flex flex-col items-center justify-center">
         <HeroSection/>
         <ServicesSection />
         <ValuePropositionSection />
