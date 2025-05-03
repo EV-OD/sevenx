@@ -40,18 +40,18 @@ const Globe = () => {
           { location: [27.6706, 84.4385], size: 0.1 }
           
         ],
-        // onRender: (state) => {
-        //   // Called on every animation frame.
-        //   // `state` will be an empty object, return updated params.
+        onRender: (state) => {
+          // Called on every animation frame.
+          // `state` will be an empty object, return updated params.
 
-        //           // This prevents rotation while dragging
-        // if (!pointerInteracting.current) {
-        //     // Called on every animation frame.
-        //     // `state` will be an empty object, return updated params.
-        //     phi += 0.01;
-        //   } 
-        //   state.phi = phi + r.get()
-        // }
+                  // This prevents rotation while dragging
+        if (!pointerInteracting.current) {
+            // Called on every animation frame.
+            // `state` will be an empty object, return updated params.
+            phi += 0.01;
+          } 
+          state.phi = phi + r.get()
+        }
       });
   
       return () => {
