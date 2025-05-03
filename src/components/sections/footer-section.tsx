@@ -13,7 +13,7 @@ export default function FooterSection() {
                    <BriefcaseBusiness className="h-6 w-6" />
                    <span>SevenX Innovations Pvt. Ltd.</span>
                  </Link>
-                <p className="text-sm text-primary-foreground/80">&copy; {new Date().getFullYear()} ProResponsive. All rights reserved.</p>
+                <p className="text-sm text-primary-foreground/80">&copy; {new Date().getFullYear()} SevenX Innovations Pvt. Ltd. All rights reserved.</p>
             </div>
 
              {/* Navigation Links */}

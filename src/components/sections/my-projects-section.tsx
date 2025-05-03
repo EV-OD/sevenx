@@ -56,10 +56,10 @@ export default function MyProjectsSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground font-heading mb-3">
-            My Projects
+            Our Projects
           </h2>
           <p className="max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
-            Lorem ipsum dolor sit amet consectetur. Mollis erat duis aliquam mauris est risus lectus. Phasellus consequat urna tellus.
+            Discover our diverse range of projects showcasing creativity, innovation, and expertise. From web design to app development, each project reflects our commitment to delivering exceptional results.
           </p>
         </motion.div>
 

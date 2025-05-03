@@ -61,7 +61,7 @@ export default function ValuePropositionSection() {
             Why Choose Us?
           </h2>
           <p className="max-w-[750px] text-muted-foreground md:text-lg lg:text-xl">
-            Discover the advantages of partnering with ProResponsive for your web development needs.
+            Discover the advantages of partnering with SevenX for your web development needs.
           </p>
         </motion.div>
 
