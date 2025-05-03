@@ -6,33 +6,26 @@ import Link from 'next/link';
 
 const teamMembers = [
   {
-    name: 'John Doe',
+    name: 'Rabin Lamichhane',
     role: 'Lead Developer',
     imageUrl: 'https://picsum.photos/200/200?random=8&grayscale',
     social: { linkedin: '#', github: '#', twitter: '#' },
     bio: 'Passionate about building scalable web applications and leading high-performing teams.',
   },
   {
-    name: 'Jane Smith',
+    name: 'Sankalpa Baral',
     role: 'UI/UX Designer',
     imageUrl: 'https://picsum.photos/200/200?random=9&grayscale',
     social: { linkedin: '#', github: '#', twitter: '#' },
     bio: 'Crafting intuitive and visually stunning user interfaces is my forte. Loves minimalist design.',
   },
   {
-    name: 'Mike Johnson',
+    name: 'Maddath Subedi',
     role: 'Project Manager',
     imageUrl: 'https://picsum.photos/200/200?random=10&grayscale',
     social: { linkedin: '#', github: '#', twitter: '#' },
     bio: 'Ensuring projects run smoothly, on time, and exceed client expectations. Agile advocate.',
-  },
-    {
-    name: 'Sarah Lee',
-    role: 'Frontend Developer',
-    imageUrl: 'https://picsum.photos/200/200?random=11&grayscale',
-    social: { linkedin: '#', github: '#', twitter: '#' },
-    bio: 'Bringing designs to life with clean code and delightful interactions. Focus on performance.',
-  },
+  }
 ];
 
 export default function TeamSection() {
@@ -47,7 +40,7 @@ export default function TeamSection() {
             The passionate individuals behind SevenX, dedicated to bringing your projects to life.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"> {/* Increased gap */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Increased gap */}
           {teamMembers.map((member, index) => (
             <Card key={index} className="text-center overflow-hidden group transition-all duration-300 ease-in-out hover:shadow-xl rounded-lg border border-border/80 hover:border-primary/20 transform hover:-translate-y-1 bg-background"> {/* Added rounded-lg, border, translate-y, background */}
               <CardContent className="p-6 flex flex-col items-center">
