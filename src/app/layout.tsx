@@ -20,8 +20,40 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: 'SevenX Innovations Pvt. Ltd.',
-  description: 'Building modern, accessible, and high-performing solutions.'
+  description: 'Building modern, accessible, and high-performing solutions.',
+  keywords: ['SevenX', 'Innovations', 'Web Development', 'App Development', 'SaaS', 'Tech Company'],
+  authors: [{ name: 'SevenX Innovations Pvt. Ltd.', url: 'https://sevenx.com.np' }],
+  metadataBase: new URL('https://sevenx.com.np'),
+  openGraph: {
+    title: 'SevenX Innovations Pvt. Ltd.',
+    description: 'We build modern, accessible, and high-performing digital solutions.',
+    url: 'https://sevenx.com.np',
+    siteName: 'SevenX Innovations',
+    images: [
+      {
+        url: '/og-image.png', // make sure this image exists in your public/ folder
+        width: 1200,
+        height: 630,
+        alt: 'SevenX Innovations Pvt. Ltd.',
+      },
+    ],
+    type: 'website',
+  },
+  // twitter: {
+  //   card: 'summary_large_image',
+  //   title: 'SevenX Innovations Pvt. Ltd.',
+  //   description: 'We build modern, accessible, and high-performing digital solutions.',
+  //   creator: '@sevenx', // change this to your Twitter handle
+  //   images: ['/og-image.png'],
+  // },
+  icons: {
+    icon: '/512.ico',
+    shortcut: '/512.ico',
+    apple: '/512.png',
+  },
+  manifest: '/site.webmanifest',
 };
+
 
 export const viewport: Viewport = {
   width: 'device-width',
