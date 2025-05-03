@@ -14,8 +14,8 @@ import BlurryCursor from '@/components/cursor';
 // import FloatingCTAButton from '@/components/layout/floating-cta-button'; // Import the new component // Commented out Floating CTA
 
 export const metadata: Metadata = {
-  title: 'ProResponsive - Professional & Responsive Web Design',
-  description: 'Building modern, accessible, and high-performing websites.',
+  title: 'SevenX Innovations Pvt. Ltd.',
+  description: 'Building modern, accessible, and high-performing solutions.'
 };
 
 export default function Home() {
