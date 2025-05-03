@@ -39,8 +39,7 @@ export default function ValuePropositionSection() {
       id="about"
       // Apply grid/dot pattern instead of circuit pattern
       className={cn(
-        "relative w-full py-20 md:py-28 lg:py-36 bg-secondary overflow-hidden", // Increased vertical padding
-        "bg-pattern-light dark:bg-pattern-dark" // Apply grid/dot pattern
+        "relative w-full py-20 md:py-28 lg:py-36 bg-secondary overflow-hidden"
       )}
     >
       {/* Optional: Decorative accent lines/shapes - Keeping these for depth */}
