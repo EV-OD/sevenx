@@ -72,8 +72,9 @@ export default function Header() {
               {/* Added SheetHeader for Accessibility */}
               <div className="flex items-center justify-between p-4 border-b">
                 <SheetTitle className="text-xl font-bold text-primary flex items-center gap-2">
-                    <BriefcaseBusiness className="h-6 w-6 text-primary" />
-                    <span>ProResponsive</span>
+                <Link href="/" className="flex items-center space-x-2 text-2xl font-bold text-primary transition-transform duration-300 ease-in-out hover:scale-105 mr-auto">
+                    <img src="/logos/icon.png" alt="SevenX Logo" className="h-[50px] w-auto" />          
+        </Link>
                 </SheetTitle>
                  {/* Explicit Close Button */}
                 <Button variant="ghost" size="icon" onClick={closeSheet} className="rounded-full hover:bg-accent transition-colors duration-200">
@@ -81,7 +82,7 @@ export default function Header() {
                   <span className="sr-only">Close Menu</span>
                 </Button>
               </div>
-              <SheetDescription className="sr-only">Mobile navigation menu for ProResponsive website</SheetDescription>
+              <SheetDescription className="sr-only">Mobile navigation menu for  SevenX Innovations</SheetDescription>
 
               <nav className="flex flex-col space-y-2 p-4 flex-grow mt-4">
                   {navItems.map((item) => (
@@ -100,7 +101,7 @@ export default function Header() {
                   ))}
                 </nav>
                  <div className="border-t p-4">
-                  <p className="text-sm text-muted-foreground text-center">&copy; {new Date().getFullYear()} ProResponsive</p>
+                  <p className="text-sm text-muted-foreground text-center">&copy; {new Date().getFullYear()} SevenX</p>
                 </div>
             </SheetContent>
           </Sheet>

@@ -1,4 +1,4 @@
-# **App Name**: ProResponsive
+# **App Name**: SevenX
 
 ## Core Features:
 

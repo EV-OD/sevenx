@@ -10,7 +10,7 @@ const testimonials = [
     avatar: 'https://picsum.photos/100/100?random=5',
     fallback: 'AJ',
     rating: 5,
-    quote: 'ProResponsive delivered an outstanding website that perfectly captures our brand. The responsive design works flawlessly across all devices!',
+    quote: 'SevenX delivered an outstanding website that perfectly captures our brand. The responsive design works flawlessly across all devices!',
   },
   {
     name: 'Bob Smith',
@@ -39,7 +39,7 @@ export default function TestimonialsSection() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 md:mb-16"> {/* Increased bottom margin */}
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary font-heading">What Clients Say About Us</h2> {/* Added font-heading */}
           <p className="max-w-[700px] text-muted-foreground md:text-lg lg:text-xl"> {/* Adjusted text size */}
-            Hear directly from our satisfied clients about their experience working with ProResponsive.
+            Hear directly from our satisfied clients about their experience working with SevenX.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Increased gap */}

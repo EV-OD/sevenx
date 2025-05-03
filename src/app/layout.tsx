@@ -19,8 +19,8 @@ const spaceGrotesk = Space_Grotesk({
 
 
 export const metadata: Metadata = {
-  title: 'ProResponsive',
-  description: 'A professional and responsive website built with Next.js',
+  title: 'SevenX Innovations Pvt. Ltd.',
+  description: 'Building modern, accessible, and high-performing solutions.'
 };
 
 export const viewport: Viewport = {

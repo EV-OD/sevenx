@@ -44,7 +44,7 @@ export default function TeamSection() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 md:mb-16"> {/* Increased bottom margin */}
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary font-heading">Meet The Team</h2> {/* Added font-heading */}
           <p className="max-w-[700px] text-muted-foreground md:text-lg lg:text-xl"> {/* Adjusted text size */}
-            The passionate individuals behind ProResponsive, dedicated to bringing your projects to life.
+            The passionate individuals behind SevenX, dedicated to bringing your projects to life.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"> {/* Increased gap */}
