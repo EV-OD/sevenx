@@ -119,8 +119,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, scale: 1, y: 0 }} // Animate to this state
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }} // Animation timing
           >
-            Innovation That 
-            Reshapes Industries
+            Design and IT Services for User-Centric Projects
           </motion.h1>
           {/* <motion.p
             className="max-w-[600px] text-muted-foreground md:text-xl lg:text-lg xl:text-xl mx-auto lg:mx-0" // Adjusted text size for better hierarchy
@@ -153,7 +152,7 @@ export default function HeroSection() {
               <Link href="#contact"><span>Get Started</span></Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="transition-transform duration-300 ease-in-out hover:scale-105">
-              <Link href="#projects"><span>View Projects</span></Link>
+              <Link href="#workflow"><span>View Workflow</span></Link>
             </Button>
           </motion.div>
 

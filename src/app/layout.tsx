@@ -21,7 +21,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: 'SevenX Innovations Pvt. Ltd.',
-  description: 'Building modern, accessible, and high-performing solutions.',
+  description: 'SevenX Innovations specializes in building modern, accessible, and high-performing digital solutions. We deliver cutting-edge web and app development services tailored to your needs.',
   keywords: [
     'SevenX Innovations',
     'IT Company in Nepal',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://sevenx.com.np'),
   openGraph: {
     title: 'SevenX Innovations Pvt. Ltd.',
-    description: 'We build modern, accessible, and high-performing digital solutions.',
+    description: 'SevenX Innovations delivers user-centric design, innovative projects, and IT services. From concept to completion, we guide every phase to create modern, accessible, and high-performing solutions tailored to your needs.',
     url: 'https://sevenx.com.np',
     siteName: 'SevenX Innovations',
     images: [
