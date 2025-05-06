@@ -47,7 +47,7 @@ export default function ServicesSection() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 md:mb-16">
           {/* Increased title size */}
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-primary font-heading">
-            Our Services
+            What services do we offer?
           </h2>
           {/* Adjusted description size */}
           <p className="max-w-[700px] text-muted-foreground md:text-lg">

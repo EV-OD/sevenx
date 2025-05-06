@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Twitter, Linkedin, Github, BriefcaseBusiness } from 'lucide-react'; // Added BriefcaseBusiness icon
+import { Twitter, Linkedin, Github, BriefcaseBusiness, Instagram, Facebook, Mail } from 'lucide-react'; // Added BriefcaseBusiness icon
 
 export default function FooterSection() {
   return (
@@ -40,24 +40,24 @@ export default function FooterSection() {
 
              {/* Social Media Links */}
              <div className="flex justify-center md:justify-end space-x-5"> {/* Increased spacing */}
-               <Link href="#" passHref legacyBehavior>
-                  <a target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-transform transform hover:scale-110"> {/* Added transform */}
-                   <Twitter className="h-6 w-6" /> {/* Increased icon size */}
-                   <span className="sr-only">Twitter</span>
-                  </a>
-               </Link>
-               <Link href="#" passHref legacyBehavior>
+                 <Link href="https://www.instagram.com/sevenx.innovations/" passHref legacyBehavior>
                  <a target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-transform transform hover:scale-110"> {/* Added transform */}
-                   <Linkedin className="h-6 w-6" /> {/* Increased icon size */}
-                   <span className="sr-only">LinkedIn</span>
+                   <Instagram className="h-6 w-6" /> {/* Increased icon size */}
+                   <span className="sr-only">Instagram</span>
                  </a>
-               </Link>
-               <Link href="#" passHref legacyBehavior>
+                 </Link>
+                 <Link href="https://www.facebook.com/share/16SZ6wo6dq/" passHref legacyBehavior>
                  <a target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-transform transform hover:scale-110"> {/* Added transform */}
-                   <Github className="h-6 w-6" /> {/* Increased icon size */}
-                   <span className="sr-only">GitHub</span>
+                   <Facebook className="h-6 w-6" /> {/* Increased icon size */}
+                   <span className="sr-only">Facebook</span>
                  </a>
-               </Link>
+                 </Link>
+                 <Link href="mailto:contact@sevenx.com.np" passHref legacyBehavior>
+                 <a target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-transform transform hover:scale-110"> {/* Added transform */}
+                   <Mail className="h-6 w-6" /> {/* Increased icon size */}
+                   <span className="sr-only">Mail</span>
+                 </a>
+                 </Link>
              </div>
         </div>
       </div>
