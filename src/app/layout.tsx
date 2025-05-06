@@ -60,12 +60,14 @@ export const metadata: Metadata = {
       },
     ],
     type: 'website',
+    locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SevenX Innovations Pvt. Ltd.',
     description: 'We build modern, accessible, and high-performing digital solutions.',
-    creator: '@yourTwitterHandle',
+    creator: '@SevenXInnovations',
+    site: '@SevenXInnovations',
     images: ['/og-image.png'],
   },
   icons: {
@@ -74,6 +76,30 @@ export const metadata: Metadata = {
     apple: '/favicon.png', // Optional, use a 180x180 PNG
   },
   manifest: '/site.webmanifest',
+  meta: [
+    { name: 'robots', content: 'index, follow' },
+    { name: 'author', content: 'SevenX Innovations Pvt. Ltd.' },
+    { name: 'language', content: 'English' },
+    { name: 'revisit-after', content: '7 days' },
+    { name: 'distribution', content: 'global' },
+    { name: 'rating', content: 'general' },
+    { name: 'subject', content: 'IT Solutions and Services in Nepal' },
+    { name: 'coverage', content: 'Worldwide' },
+    { name: 'HandheldFriendly', content: 'true' },
+    { name: 'MobileOptimized', content: 'width' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+  ],
+  structuredData: {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'SevenX Innovations Pvt. Ltd.',
+    url: 'https://sevenx.com.np',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://sevenx.com.np/?q={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  },
 };
 
 

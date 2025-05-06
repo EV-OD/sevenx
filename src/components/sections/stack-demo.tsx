@@ -210,4 +210,4 @@ const Achievements = () => {
         </ContainerScroll>
     )
 }
-export { Process, Work, Achievements }
+export { Process, Achievements }
