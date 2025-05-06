@@ -75,31 +75,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
     apple: '/favicon.png', // Optional, use a 180x180 PNG
   },
-  manifest: '/site.webmanifest',
-  meta: [
-    { name: 'robots', content: 'index, follow' },
-    { name: 'author', content: 'SevenX Innovations Pvt. Ltd.' },
-    { name: 'language', content: 'English' },
-    { name: 'revisit-after', content: '7 days' },
-    { name: 'distribution', content: 'global' },
-    { name: 'rating', content: 'general' },
-    { name: 'subject', content: 'IT Solutions and Services in Nepal' },
-    { name: 'coverage', content: 'Worldwide' },
-    { name: 'HandheldFriendly', content: 'true' },
-    { name: 'MobileOptimized', content: 'width' },
-    { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-  ],
-  structuredData: {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'SevenX Innovations Pvt. Ltd.',
-    url: 'https://sevenx.com.np',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://sevenx.com.np/?q={search_term_string}',
-      'query-input': 'required name=search_term_string',
-    },
-  },
+  manifest: '/site.webmanifest'
 };
 
 
@@ -124,22 +100,6 @@ export default function RootLayout({
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="theme-color" content="#ffffff" />
       <link rel="canonical" href="https://sevenx.com.np" />
-
-      <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "SevenX Innovations Pvt. Ltd.",
-          url: "https://sevenx.com.np",
-          logo: "https://sevenx.com.np/favicon.png",
-          sameAs: [
-            "https://www.instgram.com/sevenx.innovations/",
-          ]
-        }),
-      }}
-    />
     </>
       {/* Apply both font variables to the body */}
       <body className={`${geistSans.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
