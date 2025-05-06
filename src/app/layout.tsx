@@ -22,7 +22,28 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'SevenX Innovations Pvt. Ltd.',
   description: 'Building modern, accessible, and high-performing solutions.',
-  keywords: ['SevenX', 'Innovations', 'Web Development', 'App Development', 'SaaS', 'Tech Company'],
+  keywords: [
+    'SevenX Innovations',
+    'IT Company in Nepal',
+    'Tech Company Nepal',
+    'Web Development Nepal',
+    'App Development Nepal',
+    'Software Development Nepal',
+    'Custom Software Nepal',
+    'Mobile App Development Nepal',
+    'Best IT Company in Nepal',
+    'Digital Solutions Nepal',
+    'Nepal Tech Startup',
+    'Top Tech Companies Nepal',
+    'Outsourcing IT Nepal',
+    'Enterprise Software Nepal',
+    'SaaS Company Nepal',
+    'UI UX Design Nepal',
+    'Cloud Solutions Nepal',
+    'Tech Innovation Nepal',
+    'SevenX Pvt Ltd',
+    'SevenX Software Company'
+  ],  
   authors: [{ name: 'SevenX Innovations Pvt. Ltd.', url: 'https://sevenx.com.np' }],
   metadataBase: new URL('https://sevenx.com.np'),
   openGraph: {
@@ -40,17 +61,17 @@ export const metadata: Metadata = {
     ],
     type: 'website',
   },
-  // twitter: {
-  //   card: 'summary_large_image',
-  //   title: 'SevenX Innovations Pvt. Ltd.',
-  //   description: 'We build modern, accessible, and high-performing digital solutions.',
-  //   creator: '@sevenx', // change this to your Twitter handle
-  //   images: ['/og-image.png'],
-  // },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SevenX Innovations Pvt. Ltd.',
+    description: 'We build modern, accessible, and high-performing digital solutions.',
+    creator: '@yourTwitterHandle',
+    images: ['/og-image.png'],
+  },
   icons: {
-    icon: '/512.ico',
-    shortcut: '/512.ico',
-    apple: '/512.png',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.png', // Optional, use a 180x180 PNG
   },
   manifest: '/site.webmanifest',
 };
@@ -70,6 +91,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <>
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="shortcut icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" href="/favicon.png" sizes="180x180" />
+      <link rel="manifest" href="/site.webmanifest" />
+      <meta name="theme-color" content="#ffffff" />
+      <link rel="canonical" href="https://sevenx.com.np" />
+
+      <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "SevenX Innovations Pvt. Ltd.",
+          url: "https://sevenx.com.np",
+          logo: "https://sevenx.com.np/favicon.png",
+          sameAs: [
+            "https://www.instgram.com/sevenx.innovations/",
+          ]
+        }),
+      }}
+    />
+    </>
       {/* Apply both font variables to the body */}
       <body className={`${geistSans.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
       {/*<DynamicCursor />  Add the dynamic cursor component */}

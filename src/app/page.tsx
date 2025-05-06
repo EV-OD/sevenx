@@ -16,7 +16,31 @@ import { HeroGeometric } from '@/components/ui/shape-landing-hero';
 
 export const metadata: Metadata = {
   title: 'SevenX Innovations Pvt. Ltd.',
-  description: 'Building modern, accessible, and high-performing solutions.'
+  description: 'Building modern, accessible, and high-performing solutions.',
+  keywords: [
+    'SevenX Innovations',
+    'IT Company in Nepal',
+    'Tech Company Nepal',
+    'Web Development Nepal',
+    'App Development Nepal',
+    'Software Development Nepal',
+    'Custom Software Nepal',
+    'Mobile App Development Nepal',
+    'Best IT Company in Nepal',
+    'Digital Solutions Nepal',
+    'Nepal Tech Startup',
+    'Top Tech Companies Nepal',
+    'Outsourcing IT Nepal',
+    'Enterprise Software Nepal',
+    'SaaS Company Nepal',
+    'UI UX Design Nepal',
+    'Cloud Solutions Nepal',
+    'Tech Innovation Nepal',
+    'SevenX Pvt Ltd',
+    'SevenX Software Company'
+  ],
+  authors: [{ name: 'SevenX Innovations Pvt. Ltd.', url: 'https://sevenx.com.np' }],
+  metadataBase: new URL('https://sevenx.com.np'),  
 };
 
 export default function Home() {
