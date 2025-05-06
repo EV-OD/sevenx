@@ -197,9 +197,9 @@ const Achievements = () => {
                         background: `${achievement.bg}`,
                     }}
                 >
-                    <h1 className="text-left text-6xl font-semibold opacity-80">
+                    <h2 className="text-left text-6xl font-semibold opacity-80">
                         {achievement.title}
-                    </h1>
+                    </h2>
                     <div className="place-items-end text-right">
                         <h3 className="max-w-[10ch] text-wrap text-4xl font-semibold capitalize tracking-tight">
                             {achievement.description}
