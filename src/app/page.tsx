@@ -51,7 +51,7 @@ export default function Home() {
       {/* Removed pt-4 and md:pt-8 for less top padding */}
       <main className="flex-grow pb-8 md:pb-16 flex flex-col items-center justify-center">
         <HeroSection/>
-        {/* <ServicesSection /> */}
+        <ServicesSection />
         <ValuePropositionSection />
         {/* <VisionGoalSection /> Removed component usage */}
         <HeroGeometric badge="SevenX"
