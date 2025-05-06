@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Menu, X, HomeIcon, BriefcaseBusiness, Info, FolderKanban, Users, Mail } from "lucide-react";
+import { Menu, X, HomeIcon, BriefcaseBusiness, Info, FolderKanban, Users, Mail, WorkflowIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
@@ -10,8 +10,8 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { label: "Home", href: "#home", icon: HomeIcon },
   { label: "Services", href: "#services", icon: BriefcaseBusiness },
-  { label: "About", href: "#about", icon: Info },
-  { label: "Projects", href: "#projects", icon: FolderKanban },
+  { label: "Workflow", href: "#workflow", icon: WorkflowIcon },
+  // { label: "Projects", href: "#projects", icon: FolderKanban },
   { label: "Team", href: "#team", icon: Users },
   { label: "Contact", href: "#contact", icon: Mail },
 ];
