@@ -99,7 +99,7 @@ export default function RootLayout({
       <link rel="apple-touch-icon" href="/favicon.png" sizes="180x180" />
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="theme-color" content="#ffffff" />
-      <link rel="canonical" href="https://sevenx.com.np" />
+      <link rel="canonical" href="https://www.sevenx.com.np/" />
     </>
       {/* Apply both font variables to the body */}
       <body className={`${geistSans.variable} ${spaceGrotesk.variable} font-sans antialiased`}>

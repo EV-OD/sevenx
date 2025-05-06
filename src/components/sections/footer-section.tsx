@@ -9,10 +9,10 @@ export default function FooterSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             {/* Logo and Copyright */}
             <div className="flex flex-col items-center md:items-start space-y-3">
-                 <Link href="/" className="flex items-center space-x-2 text-xl font-bold transition-opacity hover:opacity-90">
-                   <BriefcaseBusiness className="h-6 w-6" />
-                   <span>SevenX Innovations Pvt. Ltd.</span>
-                 </Link>
+            <Link href="/" className="flex items-center space-x-2 text-2xl font-bold text-primary transition-transform duration-300 ease-in-out hover:scale-105 mr-auto">
+                    <img src="/favicon-dark.png" alt="SevenX Logo" className="h-[50px] w-auto" /> 
+                    <p className="text-xl font-bold text-white">SevenX Innovations Pvt. Ltd.</p>       
+        </Link>
                 <p className="text-sm text-primary-foreground/80">&copy; {new Date().getFullYear()} SevenX Innovations Pvt. Ltd. All rights reserved.</p>
             </div>
 
