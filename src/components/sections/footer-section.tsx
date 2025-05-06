@@ -17,8 +17,8 @@ export default function FooterSection() {
             </div>
 
              {/* Navigation Links */}
-             <nav className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 text-sm"> {/* Increased gap */}
-               <Link href="#services" className="hover:underline underline-offset-4 transition-opacity hover:opacity-90">
+             <nav className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 text-sm"> 
+               {/* <Link href="#services" className="hover:underline underline-offset-4 transition-opacity hover:opacity-90">
                  Services
                </Link>
                <Link href="#projects" className="hover:underline underline-offset-4 transition-opacity hover:opacity-90">
@@ -35,7 +35,7 @@ export default function FooterSection() {
                  </Link>
                  <Link href="#terms" className="hover:underline underline-offset-4 transition-opacity hover:opacity-90">
                    Terms of Service
-                 </Link>
+                 </Link> */}
              </nav>
 
              {/* Social Media Links */}
