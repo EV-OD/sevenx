@@ -1,10 +1,11 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   font-family: var(--font-geist-sans), sans-serif;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 @layer base {
@@ -84,7 +85,6 @@ body {
     @apply border-border;
   }
   body {
-
     @apply bg-background text-foreground;
     /* Remove default cursor when dynamic cursor is active */
     &.dynamic-cursor-active {
@@ -94,18 +94,32 @@ body {
 
   /* Animation keyframes */
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
   }
 
   @keyframes float-reverse {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(15px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(15px);
+    }
   }
 
   @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes fade-in-up {
@@ -120,41 +134,52 @@ body {
   }
 
   @keyframes subtle-pulse {
-    0%, 100% { opacity: 0.1; transform: scale(1); }
-    50% { opacity: 0.2; transform: scale(1.05); }
+    0%,
+    100% {
+      opacity: 0.1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.2;
+      transform: scale(1.05);
+    }
   }
 
   @keyframes slow-spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
-   @keyframes bounce {
-      0%, 100% {
-        transform: translateY(-25%);
-        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-      }
-      50% {
-        transform: translateY(0);
-        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-      }
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(-25%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
     }
+    50% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
 }
 
 @media screen and (min-width: 640px) {
   /* Add custom styles for larger screens */
-body{
-  width: 100vw;
-  height: 300vh;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: repeat;
-  background-image: url(/long-back.png);
-}
-  
+  body {
+    width: 100vw;
+    height: 300vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    background-image: url(/long-back.png);
+  }
 }
 
-main > section > *{
+main > section > * {
   margin-inline: auto;
 }
 
@@ -167,8 +192,6 @@ main > section > *{
     background-position: left center;
     background-repeat: no-repeat;
     background-image: url(/back2.svg);
-
-    
   }
 }
 
@@ -178,7 +201,7 @@ main > section > *{
     animation: float 6s ease-in-out infinite;
   }
   .animate-float-reverse {
-      animation: float-reverse 7s ease-in-out infinite;
+    animation: float-reverse 7s ease-in-out infinite;
   }
 
   /* Ensure fade-in animations defined in hero section are here */
@@ -187,31 +210,61 @@ main > section > *{
   }
 
   .animate-fade-in {
-   animation: fade-in 0.8s ease-out forwards;
+    animation: fade-in 0.8s ease-out forwards;
   }
 
-  .animation-delay-100 { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; } /* Added new delay */
-  .animation-delay-200 { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; }
-  .animation-delay-300 { animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards; }
-  .animation-delay-400 { animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards; }
-  .animation-delay-500 { animation-delay: 0.5s; opacity: 0; animation-fill-mode: forwards; } /* Added new delay */
-  .animation-delay-600 { animation-delay: 0.6s; opacity: 0; animation-fill-mode: forwards; }
-  .animation-delay-700 { animation-delay: 0.7s; opacity: 0; animation-fill-mode: forwards; } /* Added new delay */
-  .animation-delay-800 { animation-delay: 0.8s; opacity: 0; animation-fill-mode: forwards; } /* Added new delay */
-
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  } /* Added new delay */
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+  .animation-delay-500 {
+    animation-delay: 0.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  } /* Added new delay */
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+  .animation-delay-700 {
+    animation-delay: 0.7s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  } /* Added new delay */
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  } /* Added new delay */
 
   .animate-subtle-pulse {
     animation: subtle-pulse 8s ease-in-out infinite;
   }
 
   .animate-slow-spin {
-      animation: slow-spin 25s linear infinite;
+    animation: slow-spin 25s linear infinite;
   }
 
   .animate-bounce {
     animation: bounce 1s infinite;
   }
-
 
   /* Add background pattern utilities */
   .bg-pattern-light {
@@ -220,18 +273,19 @@ main > section > *{
       linear-gradient(to bottom, hsla(var(--border)/0.5) 1px, transparent 1px),
       radial-gradient(hsla(var(--border)/0.8) 0.5px, transparent 0.5px);
     background-size: 50px 50px, 50px 50px, 10px 10px; */
-
-    
   }
   .dark .bg-pattern-dark {
-    background-image:
-      linear-gradient(to right, hsla(var(--border)/0.3) 1px, transparent 1px),
-      linear-gradient(to bottom, hsla(var(--border)/0.3) 1px, transparent 1px),
-      radial-gradient(hsla(var(--border)/0.4) 0.5px, transparent 0.5px);
+    background-image: linear-gradient(
+        to right,
+        hsla(var(--border) / 0.3) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, hsla(var(--border) / 0.3) 1px, transparent 1px),
+      radial-gradient(hsla(var(--border) / 0.4) 0.5px, transparent 0.5px);
     background-size: 50px 50px, 50px 50px, 10px 10px; /* Grid lines, dots */
   }
 
-  .bg-service{
+  .bg-service {
     /* width: 100%;
     height: 100%;
     background-size: cover;
@@ -240,13 +294,22 @@ main > section > *{
     background-image: url(/back-flip.png); */
   }
 
-   /* Wavy background pattern */
+  /* Wavy background pattern */
   .bg-wavy {
-    background-color: hsl(var(--background)); /* Ensure background color is set */
+    background-color: hsl(
+      var(--background)
+    ); /* Ensure background color is set */
     opacity: 1; /* Ensure opacity is 1 */
-    background-image:
-      radial-gradient(circle at 25px 25px, hsla(var(--primary)/0.05) 2%, transparent 0%),
-      radial-gradient(circle at 75px 75px, hsla(var(--primary)/0.05) 2%, transparent 0%);
+    background-image: radial-gradient(
+        circle at 25px 25px,
+        hsla(var(--primary) / 0.05) 2%,
+        transparent 0%
+      ),
+      radial-gradient(
+        circle at 75px 75px,
+        hsla(var(--primary) / 0.05) 2%,
+        transparent 0%
+      );
     background-size: 100px 100px;
     background-position: 0 0;
     position: relative; /* Needed for potential pseudo-elements */
@@ -257,23 +320,28 @@ main > section > *{
     background-color: hsl(var(--secondary));
     opacity: 1;
     /* Light blue grid lines on a slightly darker blue background */
-    background-image:
-      linear-gradient(hsl(206 52% 90% / 0.15) 1px, transparent 1px), /* Light blue vertical lines */
-      linear-gradient(to right, hsl(206 52% 90% / 0.15) 1px, transparent 1px); /* Light blue horizontal lines */
+    background-image: linear-gradient(
+        hsl(206 52% 90% / 0.15) 1px,
+        transparent 1px
+      ),
+      /* Light blue vertical lines */
+        linear-gradient(to right, hsl(206 52% 90% / 0.15) 1px, transparent 1px); /* Light blue horizontal lines */
     background-size: 40px 40px; /* Adjust grid size */
     background-position: 0 0;
   }
   .dark .bg-blueprint-pattern {
-    background-color: hsl(var(--secondary)); /* Use secondary color for consistency */
-    background-image:
-      linear-gradient(hsl(206 52% 25% / 0.2) 1px, transparent 1px), /* Darker blue-ish vertical lines */
-      linear-gradient(to right, hsl(206 52% 25% / 0.2) 1px, transparent 1px); /* Darker blue-ish horizontal lines */
+    background-color: hsl(
+      var(--secondary)
+    ); /* Use secondary color for consistency */
+    background-image: linear-gradient(
+        hsl(206 52% 25% / 0.2) 1px,
+        transparent 1px
+      ),
+      /* Darker blue-ish vertical lines */
+        linear-gradient(to right, hsl(206 52% 25% / 0.2) 1px, transparent 1px); /* Darker blue-ish horizontal lines */
     background-size: 40px 40px;
     background-position: 0 0;
   }
-
-
-
 
   /* Styles for Dynamic Cursor */
   .cursor-dot {
@@ -297,31 +365,41 @@ main > section > *{
     width: 30px; /* Keep outline size */
     height: 30px;
     /* Changed from border to a semi-transparent background fill */
-    background-color: hsla(var(--primary) / 0.15); /* Semi-transparent primary color */
+    background-color: hsla(
+      var(--primary) / 0.15
+    ); /* Semi-transparent primary color */
     border-radius: 50%;
     pointer-events: none; /* Essential */
     z-index: 9998; /* Below dot but above other content */
     transform: translate(-50%, -50%); /* Center the outline */
     mix-blend-mode: difference; /* Apply blend mode to the fill */
     /* Transition multiple properties for smooth scaling and fade */
-    transition: transform 0.15s ease-out, width 0.2s ease-out, height 0.2s ease-out, background-color 0.2s ease-out;
+    transition: transform 0.15s ease-out, width 0.2s ease-out,
+      height 0.2s ease-out, background-color 0.2s ease-out;
     backdrop-filter: blur(2px); /* Add subtle backdrop blur */
   }
 
-   /* Cursor scaling effect on hoverable elements (buttons, links) */
-  :where(a, button, [role="button"], input[type="submit"], input[type="button"]):hover ~ .cursor-outline {
+  /* Cursor scaling effect on hoverable elements (buttons, links) */
+  :where(
+      a,
+      button,
+      [role="button"],
+      input[type="submit"],
+      input[type="button"]
+    ):hover
+    ~ .cursor-outline {
     transform: translate(-50%, -50%) scale(1.5); /* Scale from center */
-    background-color: hsla(var(--primary) / 0.3); /* Increase opacity on hover */
+    background-color: hsla(
+      var(--primary) / 0.3
+    ); /* Increase opacity on hover */
   }
   /* Add more selectors if needed for other interactive elements */
- :where(input[type="text"], input[type="email"], textarea):hover ~ .cursor-outline {
+  :where(input[type="text"], input[type="email"], textarea):hover
+    ~ .cursor-outline {
     transform: translate(-50%, -50%) scale(1.2); /* Different scale for inputs */
     border-radius: 4px; /* Change shape for inputs */
-    background-color: hsla(var(--primary) / 0.2); /* Slightly different opacity for inputs */
+    background-color: hsla(
+      var(--primary) / 0.2
+    ); /* Slightly different opacity for inputs */
   }
-
 }
-
-
-
-
