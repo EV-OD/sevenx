@@ -7,24 +7,31 @@ import Link from 'next/link';
 const teamMembers = [
   {
     name: 'Rabin Lamichhane',
-    role: 'Lead Developer',
-    imageUrl: 'https://picsum.photos/200/200?random=8&grayscale',
-    social: { linkedin: '#', github: '#', twitter: '#' },
-    bio: 'Passionate about building scalable web applications and leading high-performing teams.',
+    role: 'Project Engineer',
+    imageUrl: '/rabin.jpg',
+    social: { linkedin: 'https://www.linkedin.com/in/rabinlc01/', github: 'https://github.com/EV-OD', twitter: 'https://x.com/RabinLc164' },
+    bio: 'Passionate about building innovative solutions that make a difference. Loves tackling complex challenges with a smile.',
   },
   {
     name: 'Sankalpa Baral',
     role: 'UI/UX Designer',
-    imageUrl: 'https://picsum.photos/200/200?random=9&grayscale',
+    imageUrl: '/sankalpa.jpg',
     social: { linkedin: '#', github: '#', twitter: '#' },
     bio: 'Crafting intuitive and visually stunning user interfaces is my forte. Loves minimalist design.',
   },
   {
-    name: 'Maddath Subedi',
-    role: 'Project Manager',
-    imageUrl: 'https://picsum.photos/200/200?random=10&grayscale',
+    name: 'Atul Tiwari',
+    role: 'Lead Developer',
+    imageUrl: '/atul.jpg',
     social: { linkedin: '#', github: '#', twitter: '#' },
-    bio: 'Ensuring projects run smoothly, on time, and exceed client expectations. Agile advocate.',
+    bio: 'Full-stack developer with a passion for creating scalable web applications. Enjoys mentoring junior developers.',
+  },
+  {
+    name: "Gyaneshwar Sah",
+    role: 'Software Engineer',
+    imageUrl: '/gyaneswor.jpg',
+    social: { linkedin: '#', github: '#', twitter: '#' },
+    bio: 'Specializing in backend development and cloud solutions. Loves solving complex problems.',
   }
 ];
 

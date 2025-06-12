@@ -94,39 +94,39 @@ export function TestimonialsSectionBasic() {
   return (
     <TestimonialsSection
       testimonials={[
-        {
-          id: 1,
-          name: "Alex Johnson",
-          role: "Full Stack Developer",
-          company: "TechFlow",
-          content:
-            "This template streamlined our development process. The integration with modern tools is seamless, and the design is top-notch. Highly recommended!",
-          rating: 5,
-          avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-        },
-        {
-          id: 2,
-          name: "Sarah Miller",
-          role: "Frontend Engineer",
-          company: "DesignHub",
-          content:
-            "The attention to detail in this template is outstanding. It has everything you need to build a professional-grade application with ease.",
-          rating: 5,
-          avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-        },
-        {
-          id: 3,
-          name: "Michael Chen",
-          role: "Product Manager",
-          company: "InnovateLabs",
-          content:
-            "Launching our product was a breeze with this template. The pre-built components and robust architecture saved us countless hours.",
-          rating: 5,
-          avatar: "https://randomuser.me/api/portraits/men/46.jpg",
-        },
+      {
+        id: 1,
+        name: "Suman Shrestha",
+        role: "Project Manager",
+        company: "Himalayan Logistics",
+        content:
+        "Working with SevenX was a fantastic experience. Their team delivered our project on time and exceeded our expectations with their technical expertise and dedication.",
+        rating: 5,
+        avatar: "/man.jpg",
+      },
+      {
+        id: 2,
+        name: "Pratima Karki",
+        role: "Founder",
+        company: "Nepal Eco Tours",
+        content:
+        "SevenX truly understood our vision and built a beautiful, user-friendly website for our travel business. Communication was smooth and the results speak for themselves.",
+        rating: 5,
+        avatar: "/women1.jpg",
+      },
+      {
+        id: 3,
+        name: "Rabin Gurung",
+        role: "CTO",
+        company: "Everest Fintech",
+        content:
+        "We are impressed by SevenX’s professionalism and technical skills. Their solutions helped us scale our platform securely and efficiently. Highly recommended for any IT needs in Nepal.",
+        rating: 5,
+        avatar: "/man2.jpg",
+      },
       ]}
-      // trustedCompanies={["Google", "Microsoft", "Airbnb", "Spotify", "Netflix"]}
-      // trustedCompaniesTitle="Trusted by innovative teams worldwide"
+      // trustedCompanies={["Ncell", "Kumari Bank", "Daraz", "NIC Asia", "IME Pay"]}
+      // trustedCompaniesTitle="Trusted by leading Nepali brands"
     />
-  );
+    );
 }
